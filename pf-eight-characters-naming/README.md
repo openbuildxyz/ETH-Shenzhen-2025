@@ -68,6 +68,7 @@
 **RicardoPang (项目负责人 & 全栈开发)**
 
 - GitHub: [@RicardoPang](https://github.com/RicardoPang)
+- 微信: Duskofsettingsun
 - 角色：项目架构设计、前后端开发、AI集成、Web3开发
 
 ## 历史获奖说明
