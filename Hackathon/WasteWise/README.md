@@ -8,7 +8,7 @@ WasteWise 是一个基于 Web3 技术的智能垃圾分类激励平台，旨在�
 ## 项目所选赛道
 
 - **Innovative Dapps**:
-- **Track** (叠加赛道)
+- **BGA Track** (叠加赛道)
 
 ## 核心功能
 
@@ -35,5 +35,7 @@ BigFundamentaler：https://github.com/BigFundamentaler
     无获奖历史, 第一次参赛
 
 ## 项目演示（在线访问地址）
+
+https://www.wastewise.store/
 
 TODO:待补充
