@@ -20,6 +20,7 @@ AI 路由大模型会将任务拆解并分配给专门的智能体（Alice、Jam
 
 ## 代码仓库地址
 
+https://github.com/ryanz090504-star/PVPAI-Agent.git
 
 ## 团队成员
 - Ryan Zhang ([GitHub](https://github.com/ryanz090504-star))  
