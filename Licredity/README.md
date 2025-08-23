@@ -1,26 +1,16 @@
-# ETH-Shenzhen-2025
+## Licredity
 
-## Hackathon 项目提交说明
+- 项目概述  
+  Licredity 是一个基于 Uniswap v4 Hooks 的创新借贷协议，旨在解决传统借贷和流动性提供中的资本低效问题。
+  通过引入 债务代币 (dToken) 机制，Licredity 将流动性与信贷原生融合，让 LPs 在赚取交易费的同时还能获得利息收益，并为借款人提供更低利率和更高的资本效率。
 
-在 `Hackathon` 文件夹下创建一个以您的项目命名的文件夹。
+  核心优势：
 
-项目文件夹内创建一个`README.md` 文件，内含以下内容：
-
-- 项目概述
-
-Licredity 是一个基于 Uniswap v4 Hooks 的创新借贷协议，旨在解决传统借贷和流动性提供中的资本低效问题。
-通过引入 债务代币 (dToken) 机制，Licredity 将流动性与信贷原生融合，让 LPs 在赚取交易费的同时还能获得利息收益，并为借款人提供更低利率和更高的资本效率。
-
-核心优势：
-
-- 为 LPs 提供更高收益，为借款人提供更低利率
-- 借贷协议与 AMM 原生结合，无需额外流动性池
-
+  - 为 LPs 提供更高收益，为借款人提供更低利率
+  - 借贷协议与 AMM 原生结合，无需额外流动性池
   - 真正的 DeFi 原生设计，开创新的金融基元 (dToken = 利率原语)
 
-- 项目所选赛道(只能选一个)
-
-  - **xFi**: 推动 DeFi 创新，提升资本效率。
+- 项目所选赛道：**xFi**: 推动 DeFi 创新，提升资本效率。
 
 - 核心功能（4-5 条关键核心要点）
 
@@ -43,7 +33,6 @@ Licredity 是一个基于 Uniswap v4 Hooks 的创新借贷协议，旨在解决�
   - Uniswap Hook Product Accelerator
   - Uniswap Foundation Security Fund
 
-- Deck (PPT) 地址，也可直接放在此文件夹下
-  https://docs.google.com/presentation/d/1ZAEgVNDA1NXZdJmYRLcvTxAoL5bxWEzniXphdoyjT7g/
+- Deck (PPT) 地址：https://docs.google.com/presentation/d/1ZAEgVNDA1NXZdJmYRLcvTxAoL5bxWEzniXphdoyjT7g/
 
-- 项目演示（录屏 或 可页面的在线访问地址均可）
+- 项目演示：本地演示
