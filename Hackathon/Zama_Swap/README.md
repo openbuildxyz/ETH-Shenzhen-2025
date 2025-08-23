@@ -19,7 +19,7 @@ xFi: 金融类应用/协议赛道，交易协议, DeFi, RWA, ReFi 等等任何�
 - 细粒度权限与访问控制：`setOperator`、`authorizeSelf` 与 `FHE.allow/allowTransient` 组合，确保最小权限访问。
 - 一体化前端体验：内置 FHE 实例初始化、加密/解密工具与交互 UI，面向普通用户可直接使用。
 
-代码仓库地址：
+代码仓库地址：https://github.com/big-dudu-mosty/ZamaSwap
 
 团队成员 List
 嘟嘟 https://github.com/big-dudu-mosty
