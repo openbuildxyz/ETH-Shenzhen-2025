@@ -18,3 +18,6 @@
 ## 其他信息
 - 历史获奖：无
 - 参赛记录：DEX 模块参与了 2025 年 7 月 ETH 黄山
+
+## Demo视频
+https://www.bilibili.com/video/BV11kezzdEBn/
