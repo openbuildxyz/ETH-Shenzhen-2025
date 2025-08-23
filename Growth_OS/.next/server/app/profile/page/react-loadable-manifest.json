@@ -1,0 +1,10 @@
+{
+  "[project]/src/app/profile/ProfileContent.tsx [app-client] (ecmascript, next/dynamic entry)": {
+    "id": "[project]/src/app/profile/ProfileContent.tsx [app-client] (ecmascript, next/dynamic entry)",
+    "files": [
+      "static/chunks/src_ed3941cd._.js",
+      "static/chunks/node_modules_b918235c._.js",
+      "static/chunks/src_app_profile_ProfileContent_tsx_fc14c69a._.js"
+    ]
+  }
+}

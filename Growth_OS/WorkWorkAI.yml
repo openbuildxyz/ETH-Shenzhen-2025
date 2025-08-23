@@ -1,0 +1,1319 @@
+app:
+  description: ''
+  icon: 🐩
+  icon_background: '#FFEAD5'
+  mode: workflow
+  name: WorkWorkAI
+  use_icon_as_answer_icon: false
+dependencies:
+- current_identifier: null
+  type: marketplace
+  value:
+    marketplace_plugin_unique_identifier: langgenius/openai_api_compatible:0.0.16@77274df8fe2632cac66bfd153fcc75aa5e96abbe92b5c611b8984ad9f4cd4457
+- current_identifier: null
+  type: marketplace
+  value:
+    marketplace_plugin_unique_identifier: stvlynn/x:0.0.1@3dce87528c8667c508f7741c844aa741b2f94b69c27e3000c9e9becf19718cff
+- current_identifier: null
+  type: marketplace
+  value:
+    marketplace_plugin_unique_identifier: langgenius/gemini:0.2.7@b8a04c0155eb3b9d43ed1199b4387e7f67ef75ad63fcec466eab31a726e2c3a0
+- current_identifier: null
+  type: marketplace
+  value:
+    marketplace_plugin_unique_identifier: langgenius/openai:0.0.29@9e17ae8073fe53c282e9dc411e76a3cc52f8e794e4cc2499d204502086871c53
+kind: app
+version: 0.3.1
+workflow:
+  conversation_variables: []
+  environment_variables: []
+  features:
+    file_upload:
+      allowed_file_extensions:
+      - .JPG
+      - .JPEG
+      - .PNG
+      - .GIF
+      - .WEBP
+      - .SVG
+      allowed_file_types:
+      - image
+      allowed_file_upload_methods:
+      - local_file
+      - remote_url
+      enabled: false
+      fileUploadConfig:
+        audio_file_size_limit: 50
+        batch_count_limit: 5
+        file_size_limit: 15
+        image_file_size_limit: 10
+        video_file_size_limit: 100
+        workflow_file_upload_limit: 10
+      image:
+        enabled: false
+        number_limits: 3
+        transfer_methods:
+        - local_file
+        - remote_url
+      number_limits: 3
+    opening_statement: ''
+    retriever_resource:
+      enabled: true
+    sensitive_word_avoidance:
+      enabled: false
+    speech_to_text:
+      enabled: false
+    suggested_questions: []
+    suggested_questions_after_answer:
+      enabled: false
+    text_to_speech:
+      enabled: false
+      language: ''
+      voice: ''
+  graph:
+    edges:
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: start
+        targetType: agent
+      id: 1755327718687-source-1755327835376-target
+      source: '1755327718687'
+      sourceHandle: source
+      target: '1755327835376'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: start
+        targetType: agent
+      id: 1755327718687-source-1755327837900-target
+      source: '1755327718687'
+      sourceHandle: source
+      target: '1755327837900'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: llm
+        targetType: tool
+      id: 1755332751064-source-1755332792815-target
+      source: '1755332751064'
+      sourceHandle: source
+      target: '1755332792815'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: agent
+        targetType: template-transform
+      id: 1755327835376-source-1755334386839-target
+      source: '1755327835376'
+      sourceHandle: source
+      target: '1755334386839'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: template-transform
+        targetType: llm
+      id: 1755334386839-source-1755332751064-target
+      source: '1755334386839'
+      sourceHandle: source
+      target: '1755332751064'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: agent
+        targetType: template-transform
+      id: 1755327837900-source-1755334386839-target
+      source: '1755327837900'
+      sourceHandle: source
+      target: '1755334386839'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: template-transform
+        targetType: llm
+      id: 1755334386839-source-1755336796105-target
+      source: '1755334386839'
+      sourceHandle: source
+      target: '1755336796105'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: llm
+        targetType: end
+      id: 1755336796105-source-1755331223839-target
+      selected: false
+      source: '1755336796105'
+      sourceHandle: source
+      target: '1755331223839'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: tool
+        targetType: template-transform
+      id: 1755332792815-source-1755346783107-target
+      source: '1755332792815'
+      sourceHandle: source
+      target: '1755346783107'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: start
+        targetType: llm
+      id: 1755327718687-source-1755347965500-target
+      source: '1755327718687'
+      sourceHandle: source
+      target: '1755347965500'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: llm
+        targetType: template-transform
+      id: 1755347965500-source-1755334386839-target
+      source: '1755347965500'
+      sourceHandle: source
+      target: '1755334386839'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: template-transform
+        targetType: code
+      id: 1755346783107-source-1755363641010-target
+      source: '1755346783107'
+      sourceHandle: source
+      target: '1755363641010'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: code
+        targetType: end
+      id: 1755363641010-source-1755331223839-target
+      source: '1755363641010'
+      sourceHandle: source
+      target: '1755331223839'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    nodes:
+    - data:
+        desc: ''
+        selected: false
+        title: 开始
+        type: start
+        variables:
+        - label: github
+          max_length: 48
+          options: []
+          required: true
+          type: text-input
+          variable: github
+        - label: landingpage
+          max_length: 48
+          options: []
+          required: true
+          type: text-input
+          variable: landingpage
+        - allowed_file_extensions: []
+          allowed_file_types:
+          - document
+          allowed_file_upload_methods:
+          - local_file
+          - remote_url
+          label: readme
+          max_length: 48
+          options: []
+          required: true
+          type: file
+          variable: readme
+      height: 142
+      id: '1755327718687'
+      position:
+        x: 80.06254196975647
+        y: 282
+      positionAbsolute:
+        x: 80.06254196975647
+        y: 282
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        agent_parameters:
+          instruction:
+            type: constant
+            value: "<instruction>\n基于deepwiki技术，结合项目对应的GitHub官方文档或其他文档资料，从六大核心维度对该开源项目进行全面分析总结。按照软件工程领域标准文档规范，依次完成以下操作：\n\
+              1. 初始化数据结构：创建目的与应用场景、技术架构、核心功能、开发者生态、历史演进、商业化转型六大维度的数据容器\n2. 信息采集阶段：\n\
+              \   - 从文档的README/Apdx页提取项目使命陈述\n   - 分析技术选型文档识别核心编程语言及框架\n   - 解析release\
+              \ note获取版本迭代轨迹\n   - 利用项目Issue数据评估社区互动质量\n3. 特征关联分析：\n   - 建立技术选择与功能特色的因果关系\n\
+              \   - 梳理版本演进对核心功能的强化路径\n   - 解码社区数据展示的开发者协作模式\n4. 认知蒸馏生成：\n   - 采用金字塔原理组织结论陈述\n\
+              \   - 用STAR原则结构化说明典型应用场景\n   - 通过数据标注法验证结论准确性\n分析结果需以专业技术文档风格输出，每维度保持3-5句细分描述，关键数据应精确引用文档内容，结论需包含技术选型判定依据等深度洞察。禁止使用任何Markdown格式，输出自然流畅的结构化段落文本。\n\
+              </instruction>\n\n<examples>\n<example>\n<Input>\nGazebo仿真引擎项目文档显示：支持ROS2集成，采用C++开发，有2,300+\
+              \ open issues，2020年推出物理材质编辑器特性\n</Input>\n<Output>\n项目定位为高性能机器人仿真平台，通过深度集成ROS2实现跨版本兼容。技术架构采用C++17结合Webots硬件加速模块，在v3.1版本架构重组中实现了三维渲染效率提升40%。核心功能包含差速驱动模拟和SLAM环境构建，最新材质编辑器添加45种工业级物理参数。开发者社区包含MIT\
+              \ CSAIL、CMU RI等机构贡献者，2023年Q3代码提交频次达日均8.2次。从2015年的单一物理引擎逐步发展为核心模块+12个官方插件的生态系统。在医疗机器人领域已有Anki和Boston\
+              \ Dynamics等企业部署案例。\n</Output>\n</example>\n\n<example>\n<Input>\nTensorFlow.js技术文档页显示：支持WebGL加速，压缩率比PyTorch高23%，v2.4新增模型量化API，GitHub\
+              \ Star数达8.2k\n</Input>\n<Output>\n该项目确立了浏览器端AI推理的技术标准，通过WebGL 3.0实现GPU加速使帧处理速率提升至原生JS的17倍。技术架构采用编译器中间层设计，确保与Python模型的前向兼容性。核心功能涵盖实时姿态检测和增量训练，在浏览器环境实现97.4%的模型精度保持率。文档数据揭示每周82次代码提交中，量化API使用率达63%。版本演进显示移动端推理支持模块在v1.7成为独立核心组件，推动GitHub\
+              \ Star数两年间增长4.3倍。社区生态已建立TypeScript类型定义库等周边工具，被Google Meet等11个企业级应用采用。\n\
+              </Output>\n</example>\n\n<example>\n<Input>\nApache Pulsar项目说明：提供多租户支持，采用Rust语言重构消息队列核心，GitHub\
+              \ ISSUES中34%涉及云原生改造方案\n</Input>\n<Output>\n项目定位为企业级云原生存储系统，通过Rust语言重构使QPS吞吐量提升至Kafka的1.85倍。技术架构采用分层存储设计，使multi-tenancy机制支持租户级资源配额动态调整。核心功能包含Schema\
+              \ registry和跨区域分布式队列，在v2.11版本引入的流原生架构使云部署效率提升68%。社区活跃度数据显示每周产出平均54个ISSUE，其中云原生转型相关占34%并呈上升趋势。历史演进中可看出，2018年雅虎开源时侧重基础消息队列，现逐步形成包含Pulsar\
+              \ SQL和Function Compute的完整生态体系。商业化转型已见成效，Red Hat和阿里云均推出相应托管服务。\n</Output>\n\
+              </example>\n</examples>"
+          model:
+            type: constant
+            value:
+              completion_params: {}
+              mode: chat
+              model: gpt-4o
+              model_type: llm
+              provider: langgenius/openai_api_compatible/openai_api_compatible
+              type: model-selector
+          query:
+            type: constant
+            value: '{{#1755327718687.github#}}'
+          tools:
+            type: constant
+            value:
+            - enabled: true
+              extra:
+                description: Get a list of documentation topics for a GitHub repository
+              parameters:
+                repoName:
+                  auto: 1
+                  value: null
+              provider_name: deep-wiki
+              provider_show_name: DeepWiki
+              schemas:
+              - auto_generate: null
+                default: null
+                form: llm
+                human_description:
+                  en_US: 'GitHub repository: owner/repo (e.g. "facebook/react")'
+                  ja_JP: 'GitHub repository: owner/repo (e.g. "facebook/react")'
+                  pt_BR: 'GitHub repository: owner/repo (e.g. "facebook/react")'
+                  zh_Hans: 'GitHub repository: owner/repo (e.g. "facebook/react")'
+                label:
+                  en_US: repoName
+                  ja_JP: repoName
+                  pt_BR: repoName
+                  zh_Hans: repoName
+                llm_description: 'GitHub repository: owner/repo (e.g. "facebook/react")'
+                max: null
+                min: null
+                name: repoName
+                options: []
+                placeholder: null
+                precision: null
+                required: true
+                scope: null
+                template: null
+                type: string
+              settings: {}
+              tool_description: Get a list of documentation topics for a GitHub repository
+              tool_label: read_wiki_structure
+              tool_name: read_wiki_structure
+              type: mcp
+            - enabled: true
+              extra:
+                description: View documentation about a GitHub repository
+              parameters:
+                repoName:
+                  auto: 1
+                  value: null
+              provider_name: deep-wiki
+              provider_show_name: DeepWiki
+              schemas:
+              - auto_generate: null
+                default: null
+                form: llm
+                human_description:
+                  en_US: 'GitHub repository: owner/repo (e.g. "facebook/react")'
+                  ja_JP: 'GitHub repository: owner/repo (e.g. "facebook/react")'
+                  pt_BR: 'GitHub repository: owner/repo (e.g. "facebook/react")'
+                  zh_Hans: 'GitHub repository: owner/repo (e.g. "facebook/react")'
+                label:
+                  en_US: repoName
+                  ja_JP: repoName
+                  pt_BR: repoName
+                  zh_Hans: repoName
+                llm_description: 'GitHub repository: owner/repo (e.g. "facebook/react")'
+                max: null
+                min: null
+                name: repoName
+                options: []
+                placeholder: null
+                precision: null
+                required: true
+                scope: null
+                template: null
+                type: string
+              settings: {}
+              tool_description: View documentation about a GitHub repository
+              tool_label: read_wiki_contents
+              tool_name: read_wiki_contents
+              type: mcp
+            - enabled: true
+              extra:
+                description: Ask any question about a GitHub repository
+              parameters:
+                question:
+                  auto: 1
+                  value: null
+                repoName:
+                  auto: 1
+                  value: null
+              provider_name: deep-wiki
+              provider_show_name: DeepWiki
+              schemas:
+              - auto_generate: null
+                default: null
+                form: llm
+                human_description:
+                  en_US: 'GitHub repository: owner/repo (e.g. "facebook/react")'
+                  ja_JP: 'GitHub repository: owner/repo (e.g. "facebook/react")'
+                  pt_BR: 'GitHub repository: owner/repo (e.g. "facebook/react")'
+                  zh_Hans: 'GitHub repository: owner/repo (e.g. "facebook/react")'
+                label:
+                  en_US: repoName
+                  ja_JP: repoName
+                  pt_BR: repoName
+                  zh_Hans: repoName
+                llm_description: 'GitHub repository: owner/repo (e.g. "facebook/react")'
+                max: null
+                min: null
+                name: repoName
+                options: []
+                placeholder: null
+                precision: null
+                required: true
+                scope: null
+                template: null
+                type: string
+              - auto_generate: null
+                default: null
+                form: llm
+                human_description:
+                  en_US: The question to ask about the repository
+                  ja_JP: The question to ask about the repository
+                  pt_BR: The question to ask about the repository
+                  zh_Hans: The question to ask about the repository
+                label:
+                  en_US: question
+                  ja_JP: question
+                  pt_BR: question
+                  zh_Hans: question
+                llm_description: The question to ask about the repository
+                max: null
+                min: null
+                name: question
+                options: []
+                placeholder: null
+                precision: null
+                required: true
+                scope: null
+                template: null
+                type: string
+              settings: {}
+              tool_description: Ask any question about a GitHub repository
+              tool_label: ask_question
+              tool_name: ask_question
+              type: mcp
+        agent_strategy_label: FunctionCalling
+        agent_strategy_name: function_calling
+        agent_strategy_provider_name: langgenius/agent/agent
+        desc: ''
+        meta:
+          minimum_dify_version: 1.7.0
+          version: 0.0.2
+        output_schema: null
+        plugin_unique_identifier: langgenius/agent:0.0.23@baba5fd2631a535dcd85f070f8be1bdcfb02c46e1a0a830ad00d7bc846063de4
+        selected: false
+        title: Run GitHub Research
+        tool_node_version: '2'
+        type: agent
+      height: 198
+      id: '1755327835376'
+      position:
+        x: 384
+        y: 282
+      positionAbsolute:
+        x: 384
+        y: 282
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        agent_parameters:
+          instruction:
+            type: constant
+            value: "<instruction>\n1. 首先访问用户提供的项目落地页网页链接（由用户后续输入），通读页面内容并提取核心信息。\n\
+              2. 从以下维度结构化总结项目：\n   - 核心目标：项目试图解决的主要痛点或实现的核心价值\n   - 目标用户：明确说明服务对象群体（如企业/个人/特定行业）\n\
+              \   - 核心功能：列出3-5个最具代表性的功能模块或服务项目\n   - 技术亮点：涉及的关键技术（如AI算法/区块链/物联网等）及应用方式\n\
+              \   - 商业模式：收入来源描述（订阅制/广告分成/交易佣金等）\n   - 竞争优势：与同类产品的差异化特征\n3. 每个维度采用独立段落，使用中文的「一/二/三」序号格式，每段开头加粗显示维度名称\n\
+              4. 保持每段内容简洁（不超过150字），禁止添加任何主观评价或推测\n5. 必须严格基于页面实际内容进行总结，避免引入外部知识\n6.\
+              \ 严禁使用Markdown格式，保持纯文本输出\n</instruction>\n\n<examples>\n<Input>https://www.airbnb.cn/landing-page</Input>\n\
+              <Output>\n**核心目标**：连接全球旅行者与特色住宿资源，提供在地化旅行体验  \n**目标用户**：个人旅行者及小型商务出差人群，特色房东\
+              \  \n**核心功能**：房源预订、房东认证体系、行程规划工具、多语言客服支持  \n**技术亮点**：智能推荐算法、实时比价系统、移动端AR看房技术\
+              \  \n**商业模式**：向房东收取佣金（平均3%-5%），提供付费推广服务  \n**竞争优势**：覆盖220+国家/地区超700万套房源，建立完善的信用评价生态\
+              \  \n</Output>\n\n<Input>https://www.ximalaya.com/vip/music/</Input>\n\
+              <Output>\n**核心目标**：打造高品质音频内容订阅服务平台  \n**目标用户**：有深度内容消费需求的移动互联网用户  \n\
+              **核心功能**：专辑订阅、离线收听、智能语音速记、创作者扶持计划  \n**技术亮点**：AI语音合成技术(乐声)、自适应音频编码、分布式存储方案\
+              \  \n**商业模式**：会员订阅制(18-38元/月)、内容分润、虚拟礼物打赏  \n**竞争优势**：拥有13亿条音频内容，独占80%头部IP有声版权\
+              \  \n</Output>\n\n<Input>https://www.jd-sct.com/solution.html</Input>\n\
+              <Output>\n**核心目标**：为企业提供数字化供应链解决方案  \n**目标用户**：制造、零售、物流等行业的中大型企业  \n\
+              **核心功能**：供应链可视化监控、智能补货预测、仓配协同优化、区块链溯源  \n**技术亮点**：工业物联网采集技术、机器学习需求预测模型、数字孪生仿真系统\
+              \  \n**商业模式**：定制化软件服务(按年收费)、SaaS基础订阅(5999元/月起)  \n**竞争优势**：沉淀京东零售场景实践，提供端到端全链路服务\
+              \  \n</Output>\n</examples>"
+          model:
+            type: constant
+            value:
+              completion_params: {}
+              mode: chat
+              model: gpt-4o
+              model_type: llm
+              provider: langgenius/openai_api_compatible/openai_api_compatible
+              type: model-selector
+          query:
+            type: constant
+            value: '{{#1755327718687.landingpage#}}'
+          tools:
+            type: constant
+            value:
+            - enabled: true
+              extra:
+                description: 获取目标网址（可以是 PDF），并将其转换为适合大模型处理的 Markdown 格式。
+              parameters:
+                request_params:
+                  auto: 1
+                  value: null
+                url:
+                  auto: 1
+                  value: null
+              provider_name: langgenius/jina_tool/jina
+              provider_show_name: langgenius/jina_tool/jina
+              schemas:
+              - auto_generate: null
+                default: null
+                form: llm
+                human_description:
+                  en_US: Web link
+                  ja_JP: Web link
+                  pt_BR: URL da web
+                  zh_Hans: 网页链接
+                label:
+                  en_US: URL
+                  ja_JP: URL
+                  pt_BR: URL
+                  zh_Hans: 网址
+                llm_description: url para scraping
+                max: null
+                min: null
+                name: url
+                options: []
+                placeholder: null
+                precision: null
+                required: true
+                scope: null
+                template: null
+                type: string
+              - auto_generate: null
+                default: null
+                form: llm
+                human_description:
+                  en_US: 'request parameters, format: {"key1": "value1", "key2": "value2"}
+
+                    '
+                  ja_JP: 'request parameters, format: {"key1": "value1", "key2": "value2"}
+
+                    '
+                  pt_BR: 'parâmetros de solicitação, formato: {"key1": "value1", "key2":
+                    "value2"}
+
+                    '
+                  zh_Hans: '请求参数，格式：{"key1": "value1", "key2": "value2"}
+
+                    '
+                label:
+                  en_US: Request params
+                  ja_JP: Request params
+                  pt_BR: Parâmetros de solicitação
+                  zh_Hans: 请求参数
+                llm_description: request parameters
+                max: null
+                min: null
+                name: request_params
+                options: []
+                placeholder: null
+                precision: null
+                required: false
+                scope: null
+                template: null
+                type: string
+              - auto_generate: null
+                default: null
+                form: form
+                human_description:
+                  en_US: css selector for scraping specific elements
+                  ja_JP: css selector for scraping specific elements
+                  pt_BR: css selector para scraping de elementos específicos
+                  zh_Hans: css 选择器用于抓取特定元素
+                label:
+                  en_US: Target selector
+                  ja_JP: Target selector
+                  pt_BR: Seletor de destino
+                  zh_Hans: 目标选择器
+                llm_description: css selector of the target element to scrape
+                max: null
+                min: null
+                name: target_selector
+                options: []
+                placeholder: null
+                precision: null
+                required: false
+                scope: null
+                template: null
+                type: string
+              - auto_generate: null
+                default: null
+                form: form
+                human_description:
+                  en_US: css selector for waiting for specific elements
+                  ja_JP: css selector for waiting for specific elements
+                  pt_BR: css selector para aguardar elementos específicos
+                  zh_Hans: css 选择器用于等待特定元素
+                label:
+                  en_US: Wait for selector
+                  ja_JP: Wait for selector
+                  pt_BR: Aguardar por seletor
+                  zh_Hans: 等待选择器
+                llm_description: css selector of the target element to wait for
+                max: null
+                min: null
+                name: wait_for_selector
+                options: []
+                placeholder: null
+                precision: null
+                required: false
+                scope: null
+                template: null
+                type: string
+              - auto_generate: null
+                default: null
+                form: form
+                human_description:
+                  en_US: Remove all images from the response.
+                  ja_JP: Remove all images from the response.
+                  pt_BR: Remove all images from the response.
+                  zh_Hans: 从响应中删除所有图片。
+                label:
+                  en_US: Remove images
+                  ja_JP: Remove images
+                  pt_BR: Remove images
+                  zh_Hans: 删除图片
+                llm_description: Remove all images from the response
+                max: null
+                min: null
+                name: remove_images
+                options: []
+                placeholder: null
+                precision: null
+                required: false
+                scope: null
+                template: null
+                type: boolean
+              - auto_generate: null
+                default: 0
+                form: form
+                human_description:
+                  en_US: 'Captions all images at the specified URL, adding ''Image
+                    [idx]: [caption]'' as an alt tag for those without one. This allows
+                    downstream LLMs to interact with the images in activities such
+                    as reasoning and summarizing.'
+                  ja_JP: 'Captions all images at the specified URL, adding ''Image
+                    [idx]: [caption]'' as an alt tag for those without one. This allows
+                    downstream LLMs to interact with the images in activities such
+                    as reasoning and summarizing.'
+                  pt_BR: 'Adiciona legendas a todas as imagens na URL especificada,
+                    adicionando ''Imagem [idx]: [legenda]'' como uma tag alt para
+                    aquelas que não têm uma. Isso permite que os modelos LLM inferiores
+                    interajam com as imagens em atividades como raciocínio e resumo.'
+                  zh_Hans: '为指定 URL 上的所有图像添加标题，为没有标题的图像添加“Image [idx]: [caption]”作为
+                    alt 标签，以支持下游模型的图像交互。'
+                label:
+                  en_US: Image caption
+                  ja_JP: Image caption
+                  pt_BR: Legenda da imagem
+                  zh_Hans: 图片说明
+                llm_description: Captions all images at the specified URL
+                max: null
+                min: null
+                name: image_caption
+                options: []
+                placeholder: null
+                precision: null
+                required: false
+                scope: null
+                template: null
+                type: boolean
+              - auto_generate: null
+                default: 0
+                form: form
+                human_description:
+                  en_US: A "Buttons & Links" section will be created at the end. This
+                    helps the downstream LLMs or web agents navigating the page or
+                    take further actions.
+                  ja_JP: A "Buttons & Links" section will be created at the end. This
+                    helps the downstream LLMs or web agents navigating the page or
+                    take further actions.
+                  pt_BR: Um "Botões & Links" section will be created at the end. This
+                    helps the downstream LLMs or web agents navigating the page or
+                    take further actions.
+                  zh_Hans: 末尾将添加“按钮和链接”部分，方便下游模型或网络代理做页面导航或执行进一步操作。
+                label:
+                  en_US: Gather all links at the end
+                  ja_JP: Gather all links at the end
+                  pt_BR: Coletar todos os links ao final
+                  zh_Hans: 将所有链接集中到最后
+                llm_description: Gather all links at the end
+                max: null
+                min: null
+                name: gather_all_links_at_the_end
+                options: []
+                placeholder: null
+                precision: null
+                required: false
+                scope: null
+                template: null
+                type: boolean
+              - auto_generate: null
+                default: 0
+                form: form
+                human_description:
+                  en_US: An "Images" section will be created at the end. This gives
+                    the downstream LLMs an overview of all visuals on the page, which
+                    may improve reasoning.
+                  ja_JP: An "Images" section will be created at the end. This gives
+                    the downstream LLMs an overview of all visuals on the page, which
+                    may improve reasoning.
+                  pt_BR: Um "Imagens" section will be created at the end. This gives
+                    the downstream LLMs an overview of all visuals on the page, which
+                    may improve reasoning.
+                  zh_Hans: 末尾会新增“图片”部分，方便下游模型全面了解页面的视觉内容，提升推理效果。
+                label:
+                  en_US: Gather all images at the end
+                  ja_JP: Gather all images at the end
+                  pt_BR: Coletar todas as imagens ao final
+                  zh_Hans: 将所有图片集中到最后
+                llm_description: Gather all images at the end
+                max: null
+                min: null
+                name: gather_all_images_at_the_end
+                options: []
+                placeholder: null
+                precision: null
+                required: false
+                scope: null
+                template: null
+                type: boolean
+              - auto_generate: null
+                default: null
+                form: form
+                human_description:
+                  en_US: Use proxy to access URLs
+                  ja_JP: Use proxy to access URLs
+                  pt_BR: Use proxy to access URLs
+                  zh_Hans: 利用代理访问 URL
+                label:
+                  en_US: Proxy server
+                  ja_JP: Proxy server
+                  pt_BR: Servidor de proxy
+                  zh_Hans: 代理服务器
+                llm_description: Use proxy to access URLs
+                max: null
+                min: null
+                name: proxy_server
+                options: []
+                placeholder: null
+                precision: null
+                required: false
+                scope: null
+                template: null
+                type: string
+              - auto_generate: null
+                default: 0
+                form: form
+                human_description:
+                  en_US: Bypass the Cache
+                  ja_JP: Bypass the Cache
+                  pt_BR: Ignorar o cache
+                  zh_Hans: 是否绕过缓存
+                label:
+                  en_US: Bypass the Cache
+                  ja_JP: Bypass the Cache
+                  pt_BR: Ignorar o cache
+                  zh_Hans: 绕过缓存
+                llm_description: bypass the cache
+                max: null
+                min: null
+                name: no_cache
+                options: []
+                placeholder: null
+                precision: null
+                required: false
+                scope: null
+                template: null
+                type: boolean
+              - auto_generate: null
+                default: 0
+                form: form
+                human_description:
+                  en_US: When enabled, request results won't be cached on jina servers.
+                  ja_JP: When enabled, request results won't be cached on jina servers.
+                  pt_BR: When enabled, request results won't be cached on jina servers.
+                  zh_Hans: 启用后，请求结果将不会被缓存在 jina 服务器上。
+                label:
+                  en_US: Do Not Cache/Track
+                  ja_JP: Do Not Cache/Track
+                  pt_BR: Do Not Cache/Track
+                  zh_Hans: 请勿缓存/追踪
+                llm_description: Do Not Cache/Track
+                max: null
+                min: null
+                name: no_cache_track
+                options: []
+                placeholder: null
+                precision: null
+                required: false
+                scope: null
+                template: null
+                type: boolean
+              - auto_generate: null
+                default: 0
+                form: form
+                human_description:
+                  en_US: Enable summary for the output
+                  ja_JP: Enable summary for the output
+                  pt_BR: Habilitar resumo para a saída
+                  zh_Hans: 为输出启用摘要
+                label:
+                  en_US: Enable summary
+                  ja_JP: Enable summary
+                  pt_BR: Habilitar resumo
+                  zh_Hans: 是否启用摘要
+                llm_description: enable summary
+                max: null
+                min: null
+                name: summary
+                options: []
+                placeholder: null
+                precision: null
+                required: false
+                scope: null
+                template: null
+                type: boolean
+              - auto_generate: null
+                default: 3
+                form: form
+                human_description:
+                  en_US: Number of times to retry the request if it fails
+                  ja_JP: Number of times to retry the request if it fails
+                  pt_BR: Número de vezes para repetir a solicitação se falhar
+                  zh_Hans: 请求失败时重试的次数
+                label:
+                  en_US: Retry
+                  ja_JP: Retry
+                  pt_BR: Repetir
+                  zh_Hans: 重试
+                llm_description: Number of times to retry the request if it fails
+                max: null
+                min: null
+                name: max_retries
+                options: []
+                placeholder: null
+                precision: null
+                required: false
+                scope: null
+                template: null
+                type: number
+              settings:
+                gather_all_images_at_the_end:
+                  value:
+                    type: constant
+                    value: false
+                gather_all_links_at_the_end:
+                  value:
+                    type: constant
+                    value: false
+                image_caption:
+                  value:
+                    type: constant
+                    value: false
+                max_retries:
+                  value:
+                    type: constant
+                    value: 3
+                no_cache:
+                  value:
+                    type: constant
+                    value: false
+                no_cache_track:
+                  value:
+                    type: constant
+                    value: false
+                proxy_server:
+                  value:
+                    type: mixed
+                    value: null
+                remove_images:
+                  value:
+                    type: constant
+                    value: null
+                summary:
+                  value:
+                    type: constant
+                    value: false
+                target_selector:
+                  value:
+                    type: mixed
+                    value: null
+                wait_for_selector:
+                  value:
+                    type: mixed
+                    value: null
+              tool_description: 获取目标网址（可以是 PDF），并将其转换为适合大模型处理的 Markdown 格式。
+              tool_label: 获取单页面
+              tool_name: jina_reader
+              type: builtin
+        agent_strategy_label: ReAct
+        agent_strategy_name: ReAct
+        agent_strategy_provider_name: langgenius/agent/agent
+        desc: ''
+        meta:
+          minimum_dify_version: 1.7.0
+          version: 0.0.2
+        output_schema: null
+        plugin_unique_identifier: langgenius/agent:0.0.23@baba5fd2631a535dcd85f070f8be1bdcfb02c46e1a0a830ad00d7bc846063de4
+        selected: false
+        title: Web Scrape
+        tool_node_version: '2'
+        type: agent
+      height: 198
+      id: '1755327837900'
+      position:
+        x: 404.3194136154349
+        y: 502.2704885084313
+      positionAbsolute:
+        x: 404.3194136154349
+        y: 502.2704885084313
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        desc: ''
+        outputs:
+        - value_selector:
+          - '1755363641010'
+          - result_url
+          value_type: string
+          variable: tweet
+        - value_selector:
+          - '1755332751064'
+          - text
+          value_type: string
+          variable: xhs
+        selected: false
+        title: 结束
+        type: end
+      height: 116
+      id: '1755331223839'
+      position:
+        x: 2345.1198933215055
+        y: 422.6148596351102
+      positionAbsolute:
+        x: 2345.1198933215055
+        y: 422.6148596351102
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        desc: ''
+        model:
+          completion_params: {}
+          mode: chat
+          name: gpt-4.1
+          provider: langgenius/openai/openai
+        prompt_template:
+        - id: 82634918-f948-4180-866b-ae5ca296c9a1
+          role: system
+          text: "<instruction>\n根据提供的GitHub项目简介和项目落地页内容，按照以下步骤撰写简洁精炼的Twitter推销文案：\n\
+            1. 深度解析维度：从产品核心功能、技术创新点、用户价值主张、应用场景、社会影响力等维度提取关键信息。重点关注GitHub中的技术实现说明、开源特征和社区贡献，以及落地页中的商业目标、使用案例和用户反馈。\n\
+            2. 结构化内容：需包含吸引眼球的开头（使用\U0001F680\U0001F525\U0001F4A1✨等emoji），2-3个核心优势呈现（突出技术突破或商业模式创新），明确的用户痛点解决方案，以及呼吁行动（CTA）如\"\
+            立即体验\"/\"Join Now\"/\"阅读文档\"。\n3. 功能强调技巧：用\"\U0001F680 支持10万+TPS交易处理\"\
+            或\"\U0001F527 无代码可视化部署\"等具体数据支撑抽象概念，将落地页中的企业级特征转化为准入门槛（如\"适合开发者和初创企业使用\"\
+            ）。\n4. 社交媒体优化：添加3-5个行业相关标签（#区块链 #机器学习），融入社区建设表述（\"与200+贡献者共建\"）\n\n</instruction>\n\
+            <examples>\n  <example>\n    <input>Github简介：Decentralized identity SSI\
+            \ framework based on W3C Verifiable Credentials, implemented with Rust-ZK-WASM\
+            \ for browser-based zero-knowledge proofs. Landing页：基于可验证凭证的数字身份系统，支持用户无需依赖第三方平台即可创建和验证分布式数字身份</input>\n\
+            \    <output>1/6 \U0001F6E1️ 首个浏览器原生ZK-Proof系统！无需中介即可创建可验证的去中心化身份，Rust+ZK-WASM引擎在前端完成零知识证明处理。开发者工具已开源，私有身份验证从此触手可及！#DID\
+            \ #ZKProofs #数字化身份</output>\n  </example>\n  <example>\n    <input>Github简介：AI-powered\
+            \ real-time coding assistant with 1000+ pre-trained models, compatible\
+            \ with 15+ IDEs. Landing页：智能代码助手CodexAI，支持15种主流开发工具的实时协作和语法纠错</input>\n\
+            \    <output>4/6 \U0001F4A1 拯救程序员的神器来了！CodexAI内置1000+训练模型，支持VS/VSCode等15+IDE实时语法纠错+智能补全。现开放免费试用，让机器学习帮你节省30%开发时间\U0001F680\
+            \ #编程工具 #AI开发 #效率革命</output>\n  </example>\n  <example>\n    <input>Github简介：Serverless\
+            \ edge computing platform with ARM/WASM-based lightweight container execution.\
+            \ Landing页：全球首个轻量级容器化边缘计算平台Neutron，降低90%节点部署成本</input>\n    <output>6/6\
+            \ ⚡️ 边缘计算新范式：Neutron平台仅用WASM容器即可实现全功能部署，开发者零门槛即可构建分布式应用！点击白皮书，发现如何用ARM架构变革计算格局\
+            \ \U0001F4DA #边缘计算 #WebAssembly #Neutron</output>\n  </example>\n</examples>\n\
+            <content_guidelines>\n用户画像构建需涵盖开发者、企业决策者和技术爱好者三类目标群体，每个维度对应不同类型的内容。\n\
+            功能表述采用FAB法则：Feature（技术实现）、Advantage（竞争优势）、Benefit（使用收益）。\nCTA统一使用动作型短语：\"\
+            立即注册\"/\"Explore\"/\"Get Started\"，避免疑问句式。\n关键指标需保留量词（+200%、90%下降等），复杂技术概念使用类比表述（如\"\
+            相当于500GB光纤专线\"）。\n情感激励词频占比应控制在20-30%，由\U0001F525\U0001F680✨等emoji隔断段落。\n\
+            固化时间限定词汇：\"限时免费\"/\"早鸟计划\"/\"首发权益\"增强时效性。\n\n版本控制要求：\n- Beta版特性需用// ⚠️\
+            \ 说明：当前为v0.9公测\n- 开源协议要用// 使用：GPLv3协议\n- 技术依赖须注明// 构建：zkSync本地网络\n需将这些注释转化为Twitter可读的免责声明格式：\n\
+            \U0001F4A1 正在使用#zkSync构建Web3通证系统接入点？我们提供完整的开发套件和社区支持！\n\n字数要求：\n不得超出50字\n\
+            发送一条完整推文而不是thread\n不得超出3个tag\n</content_guidelines>\n"
+        - id: 28879004-3382-4439-8368-c3e1d8e294c3
+          role: user
+          text: '<landingpage>{{#1755327837900.text#}}</landingpage>
+
+            <github>{{#1755327835376.text#}}</github>
+
+            <readme>{{#1755327718687.readme#}}</readme>'
+        selected: false
+        title: LLM
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 90
+      id: '1755332751064'
+      position:
+        x: 1028.6126057615852
+        y: 442.516489438646
+      positionAbsolute:
+        x: 1028.6126057615852
+        y: 442.516489438646
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        desc: ''
+        is_team_authorization: true
+        output_schema: null
+        paramSchemas:
+        - auto_generate: null
+          default: null
+          form: llm
+          human_description:
+            en_US: The text content of your tweet (max 280 characters)
+            ja_JP: ツイートの内容（最大280文字）
+            pt_BR: The text content of your tweet (max 280 characters)
+            zh_Hans: 推文的内容（最多280个字符）
+          label:
+            en_US: Tweet Text
+            ja_JP: ツイート内容
+            pt_BR: Tweet Text
+            zh_Hans: 推文内容
+          llm_description: The text content of the tweet, limited to 280 characters.
+            The tweet will be posted to the X account associated with the provided
+            credentials.
+          max: null
+          min: null
+          name: text
+          options: []
+          placeholder: null
+          precision: null
+          required: true
+          scope: null
+          template: null
+          type: string
+        params:
+          text: ''
+        provider_id: stvlynn/x/x
+        provider_name: stvlynn/x/x
+        provider_type: builtin
+        selected: false
+        title: 发送推文
+        tool_configurations: {}
+        tool_description: 使用X API V2发送推文
+        tool_label: 发送推文
+        tool_name: post_tweet
+        tool_node_version: '2'
+        tool_parameters:
+          text:
+            type: mixed
+            value: '{{#1755332751064.text#}}'
+        type: tool
+      height: 54
+      id: '1755332792815'
+      position:
+        x: 1334.5465393692798
+        y: 442.516489438646
+      positionAbsolute:
+        x: 1334.5465393692798
+        y: 442.516489438646
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        desc: ''
+        selected: false
+        template: '{{ arg1 }}'
+        title: 模板转换
+        type: template-transform
+        variables:
+        - value_selector:
+          - '1755347965500'
+          - text
+          value_type: string
+          variable: arg1
+      height: 54
+      id: '1755334386839'
+      position:
+        x: 680.5609826445763
+        y: 406.13482335741077
+      positionAbsolute:
+        x: 680.5609826445763
+        y: 406.13482335741077
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        desc: ''
+        model:
+          completion_params: {}
+          mode: chat
+          name: gpt-4o
+          provider: langgenius/openai_api_compatible/openai_api_compatible
+        prompt_template:
+        - id: 1f8a8e37-920c-4b6b-9c5f-a9082c6a1fb1
+          role: system
+          text: "# 任务目标\n你是一位专业且出色的小红书文案生成助手，对小红书平台的风格和用户喜好有深入了解，能够生成吸引人、符合平台调性的文案。\n\
+            \n## 任务流程\n1. 根据客户明确的需求，结合小红书平台特点，生成吸引人的小红书文案。文案需包含恰当的话题标签，以提高曝光度。\n2.\
+            \ 文案语言要生动、简洁，符合小红书用户的阅读习惯，能够有效吸引目标受众的关注。\n3: 优化文案：若客户对生成的文案存在疑问或提出进一步的修改要求，仔细分析客户问题的核心要点。\n\
+            ===回复示例===\n- 针对您提出的[重复客户问题]，优化后的文案如下：\n# [话题标签 1] # [话题标签 2] # [话题标签\
+            \ 3]\n[优化后的小红书文案内容]\n===示例结束===\n\n## 限制:\n- 仅围绕小红书文案生成相关内容进行交流，坚决拒绝回答与小红书文案生成无关的话题。\n\
+            - 所输出的内容必须逻辑清晰、条理分明，让客户能够迅速、准确地理解要点。\n- 生成的小红书文案应符合平台风格和用户喜好，避免生硬、晦涩或不符合平台调性的表述。\
+            \ \n- 回复需使用简洁明了的语言，避免过于专业或复杂的词汇，确保客户轻松理解。  \n"
+        - id: 161861dc-998a-4d8c-9c1e-71e2b359194e
+          role: user
+          text: '<github>{{#1755327835376.text#}}</github>
+
+            <landingpage>{{#1755327837900.text#}}</landingpage>
+
+            <readme>{{#1755347965500.text#}}</readme>'
+        selected: false
+        title: LLM 3
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 90
+      id: '1755336796105'
+      position:
+        x: 1300.6011444602216
+        y: 610.641667296155
+      positionAbsolute:
+        x: 1300.6011444602216
+        y: 610.641667296155
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        desc: ''
+        selected: false
+        template: '{{ arg1 }}'
+        title: 模板转换 2
+        type: template-transform
+        variables:
+        - value_selector:
+          - '1755332792815'
+          - json
+          value_type: array[object]
+          variable: arg1
+      height: 54
+      id: '1755346783107'
+      position:
+        x: 1638.5465393692798
+        y: 442.516489438646
+      positionAbsolute:
+        x: 1638.5465393692798
+        y: 442.516489438646
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        desc: ''
+        model:
+          completion_params:
+            temperature: 0.7
+          mode: chat
+          name: gemini-2.5-flash
+          provider: langgenius/gemini/google
+        prompt_template:
+        - id: 9391f574-3c17-4382-80a4-f6474c8b55d2
+          role: system
+          text: "<instruction>\n步骤说明：\n1. 全面阅读项目readme文件，重点识别以下8个维度的关键信息：项目概述、核心功能、技术架构、环境依赖、安装部署、许可协议、维护状态、贡献指南\n\
+            2. 对每个维度进行信息归纳： \n   - 项目概述需识别定位/目标受众/版本状态\n   - 核心功能列出TOP3特色功能及对应场景\n\
+            \   - 技术架构说明使用的框架/关键技术/目录结构\n   - 环境依赖区分操作系统/编程语言/第三方库版本\n   - 安装指南提炼关键步骤和注意事项\n\
+            3. 对理解困难或信息缺失的部分采取保守处理：\n   - 用括号标注缺失信息的维度（如：[技术架构：待补充]）\n   - 当不确定时使用\"\
+            据推测\"等模糊措辞\n4. 使用层次分明的数字编号体系组织结论，保持每级子项不超过3行文本\n5. 在输出末尾添加趋势分析： \n   -\
+            \ 说明该项目属于新创/迭代/维护类型\n   - 指出是否符合当前技术潮流（如是否包含云原生/AI集成等元素）\n6. 结论呈现要求： \n\
+            \   - 先列出客观信息再加入合理推测\n   - 使用统一的缩进格式（2个空格为层级分隔）\n   - 关键数据用**加粗**\n  \
+            \ - 保持中立语气，不使用主观评价词  \n7. 最终输出需要经过自检： \n   - 确保覆盖全部8个维度\n   - 每个维度至少包含2个有效信息点\n\
+            \   - 时间敏感信息（如版本更新）标注readme修改日期\n</instruction>\n\n<example>\n<input>\n\
+            # TodoList Pro\n## 一个使用React+Node的高效任务管理工具\n构建于现代Web技术栈，提供跨平台的实时协作功能。当前版本2.3.1（2024.03更新）\n\
+            \n### 安装说明\n需要Node.js v18.x和MongoDB 6.0。通过`npm install`部署服务端，前端请使用`yarn\
+            \ dev`\n\n### 贡献者指南\n欢迎提交PR。所有代码必须通过npm run lint，通过后才会考虑合并。\n\n### 常见问题\n\
+            Q: 支持移动端吗？  \nA: 提供PWA支持，完整移动端适配将在2.4版本实现\n</input>\n<output>\n1. 项目概述\n\
+            \  1.1 定位：实时协作任务管理系统  \n  1.2 状态：当前版本2.3.1（2024.03更新）  \n  1.3 技术流：前端使用**React框架**，后端采用**Node.js+MongoDB**\n\
+            \n2. 核心功能\n  2.1 实时协作文档编辑（适用于5人以上团队）\n  2.2 跨平台任务同步（支持Web和PWA模式）\n  2.3\
+            \ 版本历史回溯（保留30天版本记录）\n\n3. 技术架构\n  3.1 前端模块：React组件架构 + Zustand状态管理\n \
+            \ 3.2 后端结构：Express.js + MongoDB数据库\n  3.3 特色技术：采用Server-Sent Events实现同步\n\
+            \n4. 环境依赖\n  4.1 系统要求：支持Linux/MacOS/Windows\n  4.2 开发版本：Node.js v18.x，MongoDB\
+            \ 6.0+ \n\n5. 安装指南\n  5.1 服务端：执行`npm install`后运行`npm start`\n  5.2 开发环境：前端用`yarn\
+            \ dev`启动开发服务器\n\n6. 贡献规范\n  6.1 代码验证：必须通过`npm run lint`校验\n  6.2 提交流程：先创建Issue讨论改动方案\n\
+            \n7. 项目状态\n  7.1 维护状态：持续更新版本（最新更新于2024年3月）\n  7.2 补充说明：计划在**2.4版本**集成完整移动端体验\n\
+            \n[趋势分析] 属于活跃维护中的成熟项目，React生态的应用表明技术选型**符合现代前端潮流**。采用SSE技术同步数据相比WebSocket更具性价比，但目前移动端支持仍不完善。\n\
+            </output>\n</example>\n\n<example>\n<input>\n# 智慧农业监控系统\n基于LoRaWAN协议，采集农田环境数据（温度、湿度、光照强度）并实时上传云端\n\
+            \n### 系统要求\n- Ubuntu 20.04 or later  \n- Python 3.8-3.11  \n- 需要Raspberry\
+            \ Pi 4B和专用传感器模块\n\n### 工作原理\n数据采集→本地LoRa通信→网关转发→AWS IoT Core处理→Django管理平台展示\n\
+            \n### 持续集成流水线\nGitHub Actions实现自动化构建和测试，提供覆盖率报告\n</input>\n<output>\n\
+            1. 项目概述\n  1.1 应用领域：农业物联网监控系统\n  1.2 技术特征：结合LoRaWAN通信协议与云端数据分析\n  1.3\
+            \ 硬件依赖：运行需要Raspberry Pi 4B设备\n\n2. 核心价值\n  2.1 数据采集：支持温度/湿度/光照强度多维度监控\n\
+            \  2.2 实时性：从采集到展示的延迟低于15秒\n  2.3 成本优势：对比NB-IoT方案降低硬件成本40%\n\n3. 架构解析\n\
+            \  3.1 技术栈：Python后端+Django框架（未说明前端技术）\n  3.2 通信路径：LoRa节点→网关→AWS IoT Core云→Django后端API消费\n\
+            \n4. 环境要求\n  4.1 系统版本：建议Ubuntu 20.04+  \n  4.2 编程语言：必须Python 3.8-3.11版本\n\
+            \  4.3 硬件配置：使用**树莓派4B**作为网关设备\n\n5. 开发流程\n  5.1 自动化流程：配置了GitHub Actions\
+            \ CI/CD流水线\n  5.2 质量保障：集成测试覆盖率报告生成机制\n\n[趋势分析] 结合低功耗网络协议与云原生架构，体现出**边缘计算与云端协同**的设计趋势，但缺少对MLOps等现代农业分析技术的整合说明。\n\
+            </output>\n</example>\n\n<example>\n<input>\n# 开源机器学习平台\n## 自动化训练平台（ATP）\n\
+            ---\n### 功能亮点\n- 提供AutoML流水线  \n- 支持 TensorFlow/PyTorch/Scikit-learn \
+            \ \n- 实现GPU自动负载均衡  \n- 提供模型导出REST API  \n\n### 版本说明\nv1.2.0（Roche Ng,\
+            \ 2023-08-22）  \n迁移到FastAPI框架，较原Flask版本提升35%吞吐量\n\n### 依赖列表\n- CUDA 11.8\
+            \  \n- Python 3.10  \n- Docker 24.0+ \n</input>\n<output>\n1. 项目定位\n \
+            \ 1.1 类型：开源自动化机器学习平台（ATP）  \n  1.2 核心价值：标准化模型训练工作流程\n  1.3 主页修改时间：2023年8月22日\n\
+            \n2. 功能体系\n  2.1 AutoML流水线：支持完整的端到端训练流程\n  2.2 框架兼容：集成**TF/PyTorch/SKL**三大主流框架\n\
+            \  2.3 资源优化：GPU负载均衡算法降低空闲率达28%\n  2.4 端点服务：通过REST API提供模型导出服务\n\n3. 技术迭代\n\
+            \  3.1 v1.2.0重要变更：系统框架迁移至FastAPI\n  3.2 性能提升：相比Flask架构**吞吐量提升35%**\n\n\
+            4. 系统要求\n  4.1 运行环境：需要安装CUDA 11.8及Python 3.10\n  4.2 容器要求：必须配置Docker 24.0+版本\n\
+            \n[趋势分析] 反映出**多框架集成**与**高性能服务化**双重趋势，FastAPI选型表明对API性能的重视。但版本停留于2023年说明开发活跃度可能有所下降。\n\
+            </output>\n</example>"
+        - id: dedc5c1b-b23a-41a5-9481-9deec0ea83df
+          role: user
+          text: '{{#1755327718687.readme#}}'
+        selected: true
+        title: LLM 4
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 90
+      id: '1755347965500'
+      position:
+        x: 404.3194136154349
+        y: 739.2704885084313
+      positionAbsolute:
+        x: 404.3194136154349
+        y: 739.2704885084313
+      selected: true
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    - data:
+        code: "import json\n\ndef main(input_json: str) -> dict:\n    \"\"\"\n   \
+          \ Extracts the tweet ID from a JSON string and constructs a full URL.\n\
+          \    \n    Args:\n        input_json: A string containing JSON data, expected\
+          \ to have a 'tweet_id' key.\n\n    Returns:\n        A dictionary with a\
+          \ 'result_url' key, containing the constructed URL.\n    \"\"\"\n    data\
+          \ = json.loads(input_json)\n    tweet_id = data.get(\"tweet_id\")\n    \n\
+          \    if tweet_id:\n        result_url = f\"https://x.com/TestBot82259/status/{tweet_id}\"\
+          \n    else:\n        result_url = \"\"  # Or handle the error as needed\n\
+          \    \n    return {\n        \"result_url\": result_url,\n    }\n"
+        code_language: python3
+        desc: ''
+        outputs:
+          result_url:
+            children: null
+            type: string
+        selected: false
+        title: 代码执行
+        type: code
+        variables:
+        - value_selector:
+          - '1755346783107'
+          - output
+          value_type: string
+          variable: input_json
+      height: 54
+      id: '1755363641010'
+      position:
+        x: 1942.5465393692798
+        y: 442.516489438646
+      positionAbsolute:
+        x: 1942.5465393692798
+        y: 442.516489438646
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 244
+    viewport:
+      x: -870.9801342873309
+      y: -13.376982592839028
+      zoom: 0.6177829228346616

@@ -1,0 +1,140 @@
+@import "tailwindcss";
+
+:root {
+  --background: #C1E8FF;
+  --foreground: #000000;
+}
+
+@theme inline {
+  /* 主要颜色 */
+  --color-primary: #16b4f2;
+  
+  /* 文本颜色 */
+  --color-text-primary: #000000;
+  --color-text-secondary: #717171;
+  --color-text-tertiary: #C4C4C4;
+  --color-text-muted: #AAAAAA;
+  --color-text-inverse: #FFFFFF;
+  
+  /* 标签颜色 */
+  --color-tag-ai: #FF00D0;
+  --color-tag-crypto: #00B40F;
+  --color-tag-education: #0060FF;
+  
+  /* 背景色 */
+  --color-bg-primary: #FFFFFF;
+  --color-bg-secondary: #F1F3F4;
+  --color-bg-blue: #C1E8FF;
+  --color-bg-glass: rgba(255, 255, 255, 0.35);
+  
+  /* macOS交通灯 */
+  --color-macos-close: #FF5E58;
+  --color-macos-minimize: #FFBF30;
+  --color-macos-maximize: #27C840;
+  
+  /* 阴影 */
+  --shadow-card: 0px 0px 4px 2px rgba(0, 0, 0, 0.25);
+  --shadow-dropdown: 0px 0px 3px 2px black;
+  --shadow-button: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  --shadow-tag: 0px 0px 2px 1px rgba(0, 0, 0, 0.25);
+  
+  /* 字体 */
+  --font-sans: 'OPPO Sans 4.0', system-ui, sans-serif;
+  --font-brand: 'Alimama ShuHeiTi', system-ui, sans-serif;
+  
+  /* 字体大小 */
+  --font-size-xs: 7px;
+  --font-size-sm: 10px;
+  --font-size-base: 12px;
+  --font-size-md: 13px;
+  --font-size-lg: 14px;
+  --font-size-xl: 20px;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  font-size: var(--font-size-base);
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/* 添加文本截断样式 */
+.line-clamp-1 {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+}
+
+.line-clamp-4 {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+  overflow: hidden;
+}
+
+/* 确保卡片布局稳定 */
+.project-card-content {
+  height: 180px;
+  display: flex;
+  flex-direction: column;
+}
+
+.project-card-description {
+  flex: 1;
+  min-height: 0; /* 重要：允许flex子项收缩 */
+}
+
+/* 点击外部关闭下拉菜单 */
+@layer utilities {
+  .backdrop-blur-glass {
+    backdrop-filter: blur(43.5px);
+  }
+}
+
+/* 模态框动画 */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUpAndScale {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 30px, 0) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.2s ease-out;
+}
+
+.animate-slideUpAndScale {
+  animation: slideUpAndScale 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
