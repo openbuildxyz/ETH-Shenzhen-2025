@@ -29,6 +29,10 @@ Dedate 是一个面向大众的公共物品项目，专注于搜集、整合各�
 
 无
 
+## PPT 演示
+
+- **链接**: https://docs.google.com/presentation/d/1FGMrVGYrwBhhoKga9D7Rm_-DQNTjglUGOzE5ECIqzyA/edit?slide=id.p1#slide=id.p1
+
 ## 项目演示
 
 - **网站地址**: https://dedate.net
