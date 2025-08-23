@@ -44,7 +44,7 @@ USDK 是一个支持多链的隐私稳定币平台，专注于提供透明、安
 ## 团队成员 List
 
 - **Eason** - 项目负责人
-  - Github: [https://www.ethshenzhen.org/]
+  - Github: [netcreen]
   - 负责智能合约开发、后端架构设计和项目整体规划
 
 - **[William]** - 后端开发者 & 合约开发者
