@@ -14,7 +14,7 @@ xFi赛道、BGA Track赛道。
 四、交易身份证明
 通过对称密钥的传播性特征，任何拥有密钥的相关方 都能验证和证实一笔交易的真实性和完整性
 
-代码仓库地址:"https://github.com/SJW1111011/ethjg_"
+代码仓库地址:“https://github.com/SJW1111011/ethjg_”
 
 团队成员 List（名字、Github 地址）：
 姓名：孙锦文，github地址：SJW1111011
