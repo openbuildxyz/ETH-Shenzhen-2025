@@ -20,6 +20,41 @@ DollyVibe 不仅是一个用户参与度评估系统，更是一个革命性的 
 
 5. **去中心化身份市场（Agent Playground）**: 用户 Agent 可在竞技场展示能力并发行 Key，其他用户通过购买 Key 雇佣 Agent 服务，形成"用钱投票"的声誉经济系统
 
+## 技术架构
+
+![Technical Architecture](./img/technical-architecture.png)
+
+![技术架构图](./img/technical-architecture-cn.png)
+
+### 核心技术流程
+
+1. **数据收集与分析**
+   - 动态获取链上和链下数据源（Discord、Telegram、X/Twitter、Ethereum等）
+   - 捕获用户行为数据，包括消息、交易等多维度信息
+
+2. **AI 驱动的行为评估**
+   - 使用 Dolly AI 分析和评估用户行为数据
+   - 生成包含五大维度（参与度、相关性、专业度、互动性、文明度）的 VibePass
+
+3. **零知识证明与隐私保护**
+   - 将用户行为数据和AI分析结果打包到元数据中并生成ZKP
+   - 确保用户隐私的同时提供可验证的身份证明
+
+4. **0G 生态集成**
+   - 利用 0G Storage 进行元数据的去中心化存储
+   - 通过 0G Compute 实现可验证的链上AI决策
+   - 基于 0G Chain 铸造 iNFT (ERC-7857)
+
+5. **Agent 互操作性**
+   - ZKP验证元数据所有权并用于铸造iNFT
+   - 用户Agent可利用Dolly AI分析的数据进行进一步训练
+   - 支持与任意其他Agent的无缝交互
+
+6. **VibePass内容展示**
+   - 基于区块链爱好者的实际行为生成个性化身份标签
+   - 多维度评分系统提供量化的用户画像
+   - 支持选择性披露，适应不同应用场景需求
+
 ## 代码仓库地址
 
 - **前端**: [https://github.com/ContriXLimited/dolly-vibe-frontend](https://github.com/ContriXLimited/dolly-vibe-frontend)
@@ -48,7 +83,7 @@ DollyVibe 不仅是一个用户参与度评估系统，更是一个革命性的 
 
 ## Deck (PPT) 地址
 
-[https://preview--dolly-vibe-identity.lovable.app/](https://preview--dolly-vibe-identity.lovable.app/)
+[https://docs.google.com/presentation/d/1-EZNDSo0emzJt-j9phglGge8MDw8RGNWOqlHDo5IbXE/edit?usp=sharing](https://docs.google.com/presentation/d/1-EZNDSo0emzJt-j9phglGge8MDw8RGNWOqlHDo5IbXE/edit?usp=sharing)
 
 ## 项目演示
 
