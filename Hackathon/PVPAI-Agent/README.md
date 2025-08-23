@@ -24,9 +24,7 @@ https://github.com/ryanz090504-star/PVPAI-Agent.git
 
 ## 团队成员
 - Ryan Zhang ([GitHub](https://github.com/ryanz090504-star))  
-- Suri Zhang ([GitHub](https://github.com/...))  
+- Suri Zhang ([GitHub](https://github.com/surizhang1028-jpg))  
 
-## 历史获奖说明
-- 2025 Q1 Solana AI Hackathon 获奖项目
 
 
