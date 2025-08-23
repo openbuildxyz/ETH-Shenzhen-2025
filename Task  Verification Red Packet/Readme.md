@@ -62,7 +62,6 @@ zhiming：https://github.com/zhiming817
 
 历史获奖说明：无
 
-Deck 链接：
-Demo 链接：https://drive.google.com/file/d/1foQdRqAcB5sJ-Uo8hpXmluAb7Xu0V6Js/view?usp=sharing
+Deck 链接：https://docs.google.com/presentation/d/17eUrkTvo8FXSyo5K7TzMoQqfbwqiIwbs/edit?usp=sharing&ouid=117043026709759461724&rtpof=true&sd=true
 
-Demo 链接：
+Demo 链接：https://drive.google.com/file/d/1foQdRqAcB5sJ-Uo8hpXmluAb7Xu0V6Js/view?usp=sharing
