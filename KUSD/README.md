@@ -65,7 +65,7 @@ USDK 是一个支持多链的隐私稳定币平台，专注于提供透明、安
 
 ## Deck (PPT) 地址
 
-- [USDK项目演示PPT](当前目录下的KUSD BP.pptx， pdf版本为KUSD BP B.pdf)
+- [USDK项目演示PPT](当前目录下的KUSD BP B.pdf)
 - 或在线查看：[https://kusd-frontend-mtdff46kd-zhangx2624-9137s-projects.vercel.app/](https://kusd-frontend-mtdff46kd-zhangx2624-9137s-projects.vercel.app/)
 
 ## 项目演示
