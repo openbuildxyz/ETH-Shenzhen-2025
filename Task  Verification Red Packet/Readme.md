@@ -52,8 +52,8 @@ AIDR 任务红包不仅是代币分发工具，更是一个基于社交裂变传
 代码仓库地址：https://github.com/CutaGames/AIDR/
 
 团队成员 List（名字、Github 地址）：
-
-Paxon：https://github.com/qiaopengjun5162
+Jacky（web3XR）：https://github.com/CutaGames      
+Paxon：https://github.com/qiaopengjun5162           
 Dengjian：https://github.com/dengjiangit
 Fengyi：https://github.com/renfengyi
 Swepthong：https://github.com/swepthong
@@ -63,7 +63,7 @@ Jacky（web3XR）：https://github.com/CutaGames
 
 历史获奖说明：无  
                        
-项目历程：   项目最早是在六月份参加solana全球黑客松启动，为了解决空投成本过高问题，只是红包雏形demo ，未获奖。 但是团队之间碰撞出了非常多的火花，大家一致决定继续开发做成一个切实落地商业化运营的项目。之后两个月我们有全职有兼职将项目逐步拓展完善，在产品层面：
+项目历程：   项目最早是在六月份参加solana全球黑客松启动，为了解决空投成本过高问题，只是红包雏形demo ，未获奖。 但是碰撞出了非常多的火花，于是决定继续开发做成一个切实落地商业化运营的项目。之后两个月也新增了些感兴趣的小伙伴我们有全职有兼职将项目逐步拓展完善，在产品层面：
 
 红包产品：完善了随机，等额和空投等红包机制，加入任务模式，加入社交裂变分享功能，加入仪表盘功能，并且成功部署到了solana主网合约，近期已完成EVM（BSC）的测试网部署和测试，即将BSC主网上线
 
