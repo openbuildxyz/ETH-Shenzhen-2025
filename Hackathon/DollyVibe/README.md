@@ -87,5 +87,5 @@ DollyVibe 不仅是一个用户参与度评估系统，更是一个革命性的 
 
 ## 项目演示
 
-- **演示视频**: [https://www.youtube.com/watch?v=Rei9Rnu9owg](https://www.youtube.com/watch?v=Rei9Rnu9owg)
+- **演示视频**: [https://www.youtube.com/watch?v=IMvHUmO0DRY](https://www.youtube.com/watch?v=IMvHUmO0DRY)
 - **在线体验地址**: [https://dolly-vibe-frontend.vercel.app/](https://dolly-vibe-frontend.vercel.app/)
