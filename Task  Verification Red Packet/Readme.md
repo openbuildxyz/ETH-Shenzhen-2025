@@ -16,7 +16,7 @@ AIDR 任务红包不仅是代币分发工具，更是一个基于社交裂变传
 3. 快速裂变： 自带社交属性能够链接二维码快速分享到主流社交软件，社交媒体，朋友圈等，快速裂变获客
 4. 平均获客成本只有传统任务平台的10%
 
-🔑 核心功能说明
+核心功能说明
 
 1. 任务可定制，满足多种场景需求
 
@@ -63,9 +63,6 @@ zhiming：https://github.com/zhiming817
 历史获奖说明：无
 
 Deck 链接：
+Demo 链接：https://drive.google.com/file/d/1foQdRqAcB5sJ-Uo8hpXmluAb7Xu0V6Js/view?usp=sharing
 
 Demo 链接：
-
-Deck (PPT) 地址，也可直接放在此文件夹下
-
-项目演示（录屏 或 可页面的在线访问地址均可）
