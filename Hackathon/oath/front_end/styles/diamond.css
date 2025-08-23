@@ -1,0 +1,139 @@
+/* 钻石容器 */
+.credit-diamond-container {
+  perspective: 1200px;
+  width: var(--diamond-size, 150px);
+  height: var(--diamond-size, 150px);
+  margin: 0 auto;
+}
+
+/* 钻石基本形状 */
+.credit-diamond {
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transform: rotateX(-15deg) rotateY(45deg);
+  animation: diamond-rotate 20s infinite linear;
+  position: relative;
+}
+
+/* 钻石各个面 */
+.diamond-face {
+  position: absolute;
+  background: var(--diamond-color, linear-gradient(135deg, rgba(59,130,246,0.9), rgba(37,99,235,0.7)));
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  backface-visibility: visible;
+  opacity: 0.85;
+}
+
+/* 钻石顶部（上锥体） */
+.diamond-top {
+  width: 70%;
+  height: 70%;
+  left: 15%;
+  top: -35%;
+  transform-origin: bottom center;
+  transform: rotateX(-30deg);
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+}
+
+/* 钻石底部（下锥体） */
+.diamond-bottom {
+  width: 70%;
+  height: 70%;
+  left: 15%;
+  bottom: -35%;
+  transform-origin: top center;
+  transform: rotateX(-150deg);
+  clip-path: polygon(50% 100%, 0% 0%, 100% 0%);
+}
+
+/* 钻石主体（八面体） */
+/* 上半部分四个面 */
+.diamond-front {
+  width: 100%;
+  height: 100%;
+  transform-origin: center center;
+  transform: translateZ(0);
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+}
+
+.diamond-back {
+  width: 100%;
+  height: 100%;
+  transform-origin: center center;
+  transform: translateZ(-1px) rotateY(180deg);
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+}
+
+.diamond-right {
+  width: 100%;
+  height: 100%;
+  transform-origin: center left;
+  transform: rotateY(90deg) translateX(-50%) translateZ(50%);
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+}
+
+.diamond-left {
+  width: 100%;
+  height: 100%;
+  transform-origin: center right;
+  transform: rotateY(-90deg) translateX(50%) translateZ(50%);
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+}
+
+/* 钻石反光效果 */
+.diamond-front::after,
+.diamond-back::after,
+.diamond-left::after,
+.diamond-right::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.4) 0%,
+    rgba(255, 255, 255, 0) 50%,
+    rgba(255, 255, 255, 0.1) 100%
+  );
+  pointer-events: none;
+}
+
+/* 钻石发光效果 */
+.diamond-glow {
+  position: absolute;
+  width: 150%;
+  height: 150%;
+  left: -25%;
+  top: -25%;
+  border-radius: 50%;
+  background: transparent;
+  box-shadow: 0 0 60px 20px rgba(255, 255, 255, var(--diamond-brightness, 0.6));
+  opacity: 0.7;
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* 钻石旋转动画 */
+@keyframes diamond-rotate {
+  0% {
+    transform: rotateX(-15deg) rotateY(0deg);
+  }
+  100% {
+    transform: rotateX(-15deg) rotateY(360deg);
+  }
+}
+
+/* 悬停时暂停旋转 */
+.credit-diamond:hover {
+  animation-play-state: paused;
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+  .credit-diamond-container {
+    --diamond-size: 120px;
+  }
+}
