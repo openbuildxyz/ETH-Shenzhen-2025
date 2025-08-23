@@ -57,8 +57,9 @@ https://github.com/Oblivionis214/Thyra-monorepo
 - 在线链接：https://docs.google.com/presentation/d/15t6VZSQzKuX3fE-tAGt3e3NXQ3kq97Vc6Myy08U6eWY/edit?usp=sharing
 
 ## 项目演示
-- 路演录屏：
-- 在线 Demo（如有）：请补充链接。
+
+- 路演视频：https://drive.google.com/file/d/1G4P6EtC_gA9yEUivNqQM6iwFYORL9Q1J/view?usp=sharing
+- 在线 Demo（如有）：https://drive.google.com/file/d/1jj22gD_lgplfHyh8-TPB_JtZTR1doDk6/view?usp=sharing
 
 ---
 
