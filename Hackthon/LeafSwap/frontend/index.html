@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leafswap - Secure DeFi Exchange</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border: none;
+            border-radius: 20px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+        .btn-primary {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            border: none;
+            border-radius: 25px;
+            padding: 12px 30px;
+            font-weight: 600;
+        }
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        .form-control {
+            border-radius: 15px;
+            border: 2px solid #e9ecef;
+            padding: 15px;
+        }
+        .form-control:focus {
+            border-color: #667eea;
+            box-shadow: 0 0 0 0.2rem rgba(102, 126, 234, 0.25);
+        }
+        .nav-tabs .nav-link {
+            border: none;
+            border-radius: 15px 15px 0 0;
+            color: #6c757d;
+            font-weight: 600;
+        }
+        .nav-tabs .nav-link.active {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+        }
+        .token-input {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 20px;
+            margin: 10px 0;
+        }
+        .swap-arrow {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .swap-arrow i {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            padding: 15px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .swap-arrow i:hover {
+            transform: scale(1.1);
+        }
+        .swap-arrow i:active {
+            transform: scale(0.95);
+        }
+        .stats-card {
+            text-align: center;
+            padding: 20px;
+        }
+        .stats-card h3 {
+            color: #667eea;
+            font-weight: 700;
+        }
+        .stats-card p {
+            color: #6c757d;
+            font-size: 0.9rem;
+        }
+        
+        /* MEV Protection Switch Styles */
+        .form-check-input {
+            width: 3rem;
+            height: 1.5rem;
+            margin-top: 0;
+            background-color: #e9ecef;
+            border: 2px solid #dee2e6;
+            border-radius: 1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .form-check-input:checked {
+            background-color: #28a745;
+            border-color: #28a745;
+        }
+        
+        .form-check-input:focus {
+            box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.25);
+        }
+        
+        .form-check-label {
+            cursor: pointer;
+            user-select: none;
+        }
+        
+        /* Notification Styles */
+        .alert {
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+        
+        /* Wallet Connect Styles */
+        .wallet-connect-container {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 15px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .wallet-connect-container .btn {
+            border-radius: 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .wallet-connect-container .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+        
+        .wallet-connect-container .btn-success {
+            background: linear-gradient(45deg, #28a745, #20c997);
+            border: none;
+        }
+        
+        .wallet-connect-container .btn-outline-light {
+            border: 2px solid rgba(255, 255, 255, 0.5);
+        }
+        
+        .wallet-connect-container .btn-outline-light:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.8);
+        }
+        
+        #networkInfo {
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body>
+    <div class="container py-5">
+        <!-- Header with wallet connection -->
+        <div class="row mb-5">
+            <div class="col-8">
+                <h1 class="text-white display-4 fw-bold">
+                    <i class="fas fa-leaf me-3"></i>Leafswap
+                </h1>
+                <p class="text-white-50 lead">Secure DeFi Exchange with Enhanced Protection</p>
+            </div>
+            <div class="col-4 text-end">
+                <div class="wallet-connect-container">
+                    <button class="btn btn-outline-light btn-lg" onclick="connectWallet()" id="walletConnectBtn">
+                        <i class="fas fa-wallet me-2"></i>Connect Wallet
+                    </button>
+                    <div class="mt-2">
+                        <small class="text-white-50" id="networkInfo">Sepolia Testnet</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+
+                <div class="card">
+                    <div class="card-body p-4">
+                        <ul class="nav nav-tabs mb-4" id="swapTabs" role="tablist">
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link active" id="swap-tab" data-bs-toggle="tab" data-bs-target="#swap" type="button" role="tab">
+                                    <i class="fas fa-exchange-alt me-2"></i>Swap
+                                </button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="liquidity-tab" data-bs-toggle="tab" data-bs-target="#liquidity" type="button" role="tab">
+                                    <i class="fas fa-water me-2"></i>Liquidity
+                                </button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="pools-tab" data-bs-toggle="tab" data-bs-target="#pools" type="button" role="tab">
+                                    <i class="fas fa-chart-line me-2"></i>Pools
+                                </button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="mev-protection-tab" data-bs-toggle="tab" data-bs-target="#mev-protection" type="button" role="tab">
+                                    <i class="fas fa-shield-alt me-2"></i>MEV Protection
+                                </button>
+                            </li>
+                        </ul>
+
+                        <div class="tab-content" id="swapTabsContent">
+                            <!-- Swap Tab -->
+                            <div class="tab-pane fade show active" id="swap" role="tabpanel">
+                                <div class="token-input">
+                                    <label class="form-label fw-bold">From</label>
+                                    <div class="input-group">
+                                        <input type="number" class="form-control" id="fromAmount" placeholder="0.0">
+                                        <select class="form-select" id="fromToken" style="max-width: 120px;">
+                                            <option value="ETH">ETH</option>
+                                            <option value="TKA">TKA</option>
+                                            <option value="TKB">TKB</option>
+                                        </select>
+                                    </div>
+                                    <small class="text-muted">Balance: <span id="fromBalance">0.0</span></small>
+                                </div>
+
+                                <div class="swap-arrow">
+                                    <i class="fas fa-arrow-down" onclick="switchTokens()" style="cursor: pointer; transition: transform 0.2s;" title="Switch tokens"></i>
+                                </div>
+
+                                <div class="token-input">
+                                    <label class="form-label fw-bold">To</label>
+                                    <div class="input-group">
+                                        <input type="number" class="form-control" id="toAmount" placeholder="0.0" readonly>
+                                        <select class="form-select" id="toToken" style="max-width: 120px;">
+                                            <option value="TKA">TKA</option>
+                                            <option value="ETH">ETH</option>
+                                            <option value="TKB">TKB</option>
+                                        </select>
+                                    </div>
+                                    <small class="text-muted">Balance: <span id="toBalance">0.0</span></small>
+                                </div>
+
+                                <!-- MEV Protection Switch -->
+                                <div class="mt-3 p-3 bg-light rounded">
+                                    <div class="d-flex align-items-center justify-content-between mb-2">
+                                        <div>
+                                            <i class="fas fa-shield-alt me-2"></i>
+                                            <span class="fw-bold">MEV Protection</span>
+                                        </div>
+                                        <div class="form-check form-switch">
+                                            <input class="form-check-input" type="checkbox" id="mevProtectionSwitch">
+                                            <label class="form-check-label" for="mevProtectionSwitch">
+                                                <small class="text-muted">Enable Protection</small>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- MEV Protection Status (shown when enabled) -->
+                                    <div id="mevProtectionStatus" class="d-none">
+                                        <div class="d-flex align-items-center justify-content-between mb-2">
+                                            <div>
+                                                <span class="fw-bold text-success">Protection Active</span>
+                                            </div>
+                                            <div class="text-end">
+                                                <small class="text-muted d-block">Protection Level</small>
+                                                <span class="badge bg-success" id="mevProtectionLevel">High</span>
+                                            </div>
+                                        </div>
+                                        <div class="mb-2">
+                                            <small class="text-muted">
+                                                <i class="fas fa-clock me-1"></i>
+                                                Protection expires in: <span id="protectionExpiry">--</span> blocks
+                                            </small>
+                                        </div>
+                                        <div class="mb-2">
+                                            <small class="text-muted">
+                                                <i class="fas fa-info-circle me-1"></i>
+                                                <span id="mevProtectionInfo">Anti-front-running protection active</span>
+                                            </small>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- MEV Protection Disabled (shown when disabled) -->
+                                    <div id="mevProtectionDisabled" class="d-block">
+                                        <div class="text-center">
+                                            <small class="text-muted">
+                                                <i class="fas fa-info-circle me-1"></i>
+                                                MEV protection is disabled. Enable to protect against front-running and sandwich attacks.
+                                            </small>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="d-grid gap-2 mt-4">
+                                    <button class="btn btn-primary btn-lg" onclick="executeSwap()" id="swapBtn" disabled>
+                                        <i class="fas fa-exchange-alt me-2"></i>Swap Tokens
+                                    </button>
+                                </div>
+
+                                <div class="mt-4 p-3 bg-light rounded">
+                                    <div class="row text-center">
+                                        <div class="col">
+                            <div class="stats-card">
+                                <h3 id="swapRate">1.0</h3>
+                                <p>Exchange Rate</p>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="stats-card">
+                                <h3 id="slippage">0.5%</h3>
+                                <p>Slippage</p>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="stats-card">
+                                <h3 id="gasEstimate">~0.01</h3>
+                                <p>Gas Estimate</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Liquidity Tab -->
+            <div class="tab-pane fade" id="liquidity" role="tabpanel">
+                <div class="token-input">
+                    <label class="form-label fw-bold">Token A</label>
+                    <div class="input-group">
+                        <input type="number" class="form-control" id="liquidityTokenA" placeholder="0.0">
+                        <select class="form-select" id="liquidityTokenASelect" style="max-width: 120px;">
+                            <option value="TKA">TKA</option>
+                            <option value="TKB">TKB</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="token-input">
+                    <label class="form-label fw-bold">Token B</label>
+                    <div class="input-group">
+                        <input type="number" class="form-control" id="liquidityTokenB" placeholder="0.0">
+                        <select class="form-select" id="liquidityTokenBSelect" style="max-width: 120px;">
+                            <option value="TKB">TKB</option>
+                            <option value="TKA">TKA</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="d-grid gap-2 mt-4">
+                    <button class="btn btn-primary btn-lg" onclick="addLiquidity()">
+                        <i class="fas fa-plus me-2"></i>Add Liquidity
+                    </button>
+                    <button class="btn btn-outline-primary btn-lg" onclick="removeLiquidity()">
+                        <i class="fas fa-minus me-2"></i>Remove Liquidity
+                    </button>
+                </div>
+            </div>
+
+            <!-- Pools Tab -->
+            <div class="tab-pane fade" id="pools" role="tabpanel">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="card mb-3">
+                            <div class="card-body">
+                                <h5 class="card-title">TKA/TKB Pool</h5>
+                                <p class="card-text">
+                                    <strong>Total Liquidity:</strong> $1,234,567<br>
+                                    <strong>24h Volume:</strong> $89,123<br>
+                                    <strong>APY:</strong> 12.5%
+                                </p>
+                                <button class="btn btn-primary btn-sm">View Pool</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card mb-3">
+                            <div class="card-body">
+                                <h5 class="card-title">ETH/TKA Pool</h5>
+                                <p class="card-text">
+                                    <strong>Total Liquidity:</strong> $2,345,678<br>
+                                    <strong>24h Volume:</strong> $156,789<br>
+                                    <strong>APY:</strong> 15.2%
+                                </p>
+                                <button class="btn btn-primary btn-sm">View Pool</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- MEV Protection Tab -->
+            <div class="tab-pane fade" id="mev-protection" role="tabpanel">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="card mb-3">
+                            <div class="card-header bg-primary text-white">
+                                <h5 class="card-title mb-0">
+                                    <i class="fas fa-shield-alt me-2"></i>Protection Status
+                                </h5>
+                            </div>
+                            <div class="card-body">
+                                <div class="mb-3">
+                                    <label class="form-label fw-bold">Anti-Front-Running Protection</label>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <span id="frontRunningStatus" class="badge bg-success">Active</span>
+                                        <small class="text-muted" id="frontRunningBlocks">100 blocks remaining</small>
+                                    </div>
+                                </div>
+                                
+                                <div class="mb-3">
+                                    <label class="form-label fw-bold">Anti-MEV Mode</label>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <span id="antiMEVStatus" class="badge bg-warning">Standby</span>
+                                        <small class="text-muted">Activates after protection period</small>
+                                    </div>
+                                </div>
+                                
+                                <div class="mb-3">
+                                    <label class="form-label fw-bold">Transaction Limits</label>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <span id="txLimitStatus" class="badge bg-info">1% max per trade</span>
+                                        <small class="text-muted">Prevents monopolization</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-6">
+                        <div class="card mb-3">
+                            <div class="card-header bg-success text-white">
+                                <h5 class="card-title mb-0">
+                                    <i class="fas fa-cog me-2"></i>Configuration
+                                </h5>
+                            </div>
+                            <div class="card-body">
+                                <div class="mb-3">
+                                    <label class="form-label">Protection Duration (blocks)</label>
+                                    <input type="number" class="form-control" id="protectionDuration" value="100" min="50" max="500">
+                                    <small class="text-muted">Range: 50-500 blocks</small>
+                                </div>
+                                
+                                <div class="mb-3">
+                                    <label class="form-label">Swap Fee Rate (%)</label>
+                                    <input type="number" class="form-control" id="swapFeeRate" value="0.3" min="0.1" max="10.0" step="0.1">
+                                    <small class="text-muted">Range: 0.1-10.0%</small>
+                                </div>
+                                
+                                <div class="mb-3">
+                                    <label class="form-label">Max Slippage (%)</label>
+                                    <input type="number" class="form-control" id="maxSlippage" value="5.0" min="0.1" max="20.0" step="0.1">
+                                    <small class="text-muted">Range: 0.1-20.0%</small>
+                                </div>
+                                
+                                <div class="mb-3">
+                                    <label class="form-label">Min Liquidity (ETH)</label>
+                                    <input type="number" class="form-control" id="minLiquidity" value="0.1" min="0.01" max="10.0" step="0.01">
+                                    <small class="text-muted">Range: 0.01-10.0 ETH</small>
+                                </div>
+                                
+                                <button class="btn btn-primary w-100" onclick="updateConfigManager()" id="updateConfigBtn">
+                                    <i class="fas fa-save me-2"></i>Update Configuration
+                                </button>
+                                
+                                <div class="mt-3">
+                                    <button class="btn btn-info w-100" onclick="loadCurrentConfig()" id="loadConfigBtn">
+                                        <i class="fas fa-sync me-2"></i>Load Current Config
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-header bg-info text-white">
+                                <h5 class="card-title mb-0">
+                                    <i class="fas fa-chart-bar me-2"></i>Protection Analytics
+                                </h5>
+                            </div>
+                            <div class="card-body">
+                                <div class="row text-center">
+                                    <div class="col-md-3">
+                                        <div class="stats-card">
+                                            <h3 id="blockedTransactions">0</h3>
+                                            <p>Blocked Transactions</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="stats-card">
+                                            <h3 id="protectionEfficiency">99.9%</h3>
+                                            <p>Protection Efficiency</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="stats-card">
+                                            <h3 id="avgGasSaved">0.015</h3>
+                                            <p>Avg Gas Saved (ETH)</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="stats-card">
+                                            <h3 id="lastAttack">Never</h3>
+                                            <p>Last Attack Attempt</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ethers/5.7.2/ethers.umd.min.js"></script>
+<script src="config.js?v=1.2"></script>
+<script src="app-final.js?v=1.2"></script>
+<script>
+    // 验证函数是否加载
+    console.log('=== Function Loading Test ===');
+    console.log('connectWallet function:', typeof connectWallet);
+    console.log('testConnection function:', typeof testConnection);
+    console.log('swapTokens function:', typeof swapTokens);
+    console.log('switchTokens function:', typeof switchTokens);
+    
+    if (typeof connectWallet === 'undefined') {
+        console.error('connectWallet function is not defined!');
+        alert('JavaScript functions not loaded properly. Please refresh the page.');
+    } else {
+        console.log('All functions loaded successfully!');
+    }
+    
+    // 新的交换执行函数
+    async function executeSwap() {
+        console.log('executeSwap called');
+        try {
+            // 调用原始的swapTokens函数
+            await swapTokens();
+        } catch (error) {
+            console.error('Swap execution failed:', error);
+            alert('Swap failed: ' + error.message);
+        }
+    }
+    
+    // 启用Swap按钮的函数
+    function enableSwapButton() {
+        const swapBtn = document.getElementById('swapBtn');
+        if (swapBtn) {
+            swapBtn.disabled = false;
+            console.log('Swap button enabled');
+        }
+    }
+    
+    // 禁用Swap按钮的函数
+    function disableSwapButton() {
+        const swapBtn = document.getElementById('swapBtn');
+        if (swapBtn) {
+            swapBtn.disabled = true;
+            console.log('Swap button disabled');
+        }
+    }
+    
+    // 页面加载时启用Swap按钮（用于测试）
+    window.addEventListener('load', function() {
+        console.log('Page loaded, enabling swap button for testing...');
+        setTimeout(enableSwapButton, 1000); // 1秒后启用按钮
+    });
+</script>
+</body>
+</html>

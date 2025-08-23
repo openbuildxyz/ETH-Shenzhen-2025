@@ -1,0 +1,24 @@
+{
+  "network": "sepolia",
+  "deployer": "0xfb35053Bd39dD936f5B430DD5e73E0A6d9B02C85",
+  "contracts": {
+    "subscriptionConsumer": "0x5CC1a5329E91Fd5424afd03C42d803DC43904873",
+    "mevGuard": "0x1527Db198B15099A78209E904aDCcD762EC250E5",
+    "factory": "0x2dABACdbDf93C247E681E3D7E124B61f311D6Fd9",
+    "router": "0x7d02eD568a1FD8048dc4FDeD9895a40356A47782",
+    "tokenA": "0x198921c2Ca38Ee088cF65bFF5327249b1D23409e",
+    "tokenB": "0x0eD732A13D4432EbF0937E5b0F6B64d3DA8F7627",
+    "pair": "0x8592C7A1d83a99c6da64bf9582C81D402102079E",
+    "weth": "0x7b79995e5f793A07Bc00c21412e50Ecae098E7f9"
+  },
+  "configuration": {
+    "subscriptionId": "30867384965334728711427918226381771937390809014305130314753698149523927636152",
+    "antiFrontDefendBlock": 100,
+    "antiMEVFeePercentage": 100,
+    "antiMEVAmountOutLimitRate": 50,
+    "swapFeeRate": 30
+  },
+  "timestamp": "2025-08-18T18:52:15.254Z",
+  "explorer": "https://sepolia.etherscan.io",
+  "remainingBalance": "0.041200868826691123"
+}
