@@ -31,5 +31,4 @@ https://github.com/ryanz090504-star/PVPAI-Agent.git
 
 
 ## 项目演示
-
-- **在线体验地址**: [https://trade.pvpai.xyz/](https://trade.pvpai.xyz/)
+- https://docs.google.com/presentation/d/16UNxaznTFfehoCQdJKmPFM5LSxvWcYU7U-fqOlBvMA0/edit?usp=sharing
