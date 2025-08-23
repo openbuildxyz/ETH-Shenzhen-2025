@@ -32,5 +32,5 @@ Nexus：https://github.com/July-NANA
 # 历史获奖说明
 无
 
-# 项目演示
+# Deck
 https://heartfelt-zuccutto-03c742.netlify.app
