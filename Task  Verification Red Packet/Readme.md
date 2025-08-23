@@ -49,7 +49,7 @@ AIDR 任务红包不仅是代币分发工具，更是一个基于社交裂变传
 
 项目赛道： 创新应用类赛道
 
-代码仓库地址：https://github.com/CutaGames/AIDR/new/main/EVM
+代码仓库地址：https://github.com/CutaGames/AIDR/
 
 团队成员 List（名字、Github 地址）：
 Jacky（web3XR）：https://github.com/CutaGames
@@ -60,8 +60,13 @@ Swepthong：https://github.com/swepthong
 Zhuanglan：https://github.com/czlan91
 zhiming：https://github.com/zhiming817
 
-历史获奖说明：无
+历史获奖说明：无                         
+项目历程：   项目最早是在六月份参加solana全球黑客松启动，为了解决空投成本过高问题，只是红包雏形demo ，未获奖。 但是团队之间碰撞出了非常多的火花，大家一致决定继续开发做成一个切实落地商业化运营的项目。之后两个月我们有全职有兼职将项目逐步拓展完善，在产品层面：
+红包产品：完善了随机，等额和空投等红包机制，加入任务模式，加入社交裂变分享功能，加入仪表盘功能，并且成功部署到了solana主网合约，近期已完成EVM（BSC）的测试网部署和测试，即将BSC主网上线。 
+新产品：拓展出GropGo等产品， 类似web3的拼多多砍一刀，也是基于社交裂变机制，像打开红包一样参与拼团，支持阶梯价格设置和多层裂变激励。
 
+在合约层面： 在最初数字资产代币分发的基础上增加了交易，变成了数字资产分化和交易，因此带来了更多的应用，比如拼团产品GroupGo，OneLaunch， 众筹红包等。目前也逐步拓展支付。对接binance connect，在GroupGo 拼团电商实现法币入口→加密货币结算→法币出口.
+                                
 Deck 链接：https://docs.google.com/presentation/d/17eUrkTvo8FXSyo5K7TzMoQqfbwqiIwbs/edit?usp=sharing&ouid=117043026709759461724&rtpof=true&sd=true
 
 Demo 链接：https://drive.google.com/file/d/1foQdRqAcB5sJ-Uo8hpXmluAb7Xu0V6Js/view?usp=sharing
