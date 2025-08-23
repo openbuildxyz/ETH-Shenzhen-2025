@@ -28,9 +28,12 @@ RWA120 是一个基于以太坊智能合约的去中心化拍卖平台，专注�
 
 📱 响应式界面：基于 React + TypeScript 构建，支持桌面和移动端，提供流畅的用户交互体验
 
-
-
-
+团队成员 List（名字、Github 地址）
+0xlayer :https://github.com/git149
+jessie https://github.com/XXXJCSAMA
+楚天影 :https://github.com/slucifersz
+鲍健昕 https://github.com/JesseAtSZ
+李郎飞 https://github.com/diyu45
 
 代码仓库地址
 https://github.com/git149/RWA-Auction-RWA120-
