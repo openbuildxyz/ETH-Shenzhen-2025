@@ -66,19 +66,18 @@ USDK 是一个支持多链的隐私稳定币平台，专注于提供透明、安
 ## Deck (PPT) 地址
 
 - [USDK项目演示PPT](待完善)
-- 或在线查看：[Google Slides链接](待完善)
+- 或在线查看：[https://kusd-frontend-mtdff46kd-zhangx2624-9137s-projects.vercel.app/](https://kusd-frontend-mtdff46kd-zhangx2624-9137s-projects.vercel.app/)
 
 ## 项目演示
 
 ### 在线演示地址
-- **前端界面**: [](待完善)
+- **前端界面**: [https://kusd-frontend-mtdff46kd-zhangx2624-9137s-projects.vercel.app/](https://kusd-frontend-mtdff46kd-zhangx2624-9137s-projects.vercel.app/)
 - **合约地址 (Sepolia测试网)**:
-  - USDK Token: `待完善`
-  - ProofRegistry: `待完善`
+  - USDK Token: `0xAeE3625b0E6a4FfAc196d4DCB51dCe7568dD6353`
+  - ProofRegistry: `0x4699ED32Ab75A7B7f8c74eAE88EF1EB02BFa55da`
 
 ### 演示视频
-- [项目演示录屏](待完善)
-- 或观看在线视频：[YouTube链接](待完善)
+- [https://kusd-frontend-mtdff46kd-zhangx2624-9137s-projects.vercel.app/](https://kusd-frontend-mtdff46kd-zhangx2624-9137s-projects.vercel.app/)
 
 ## 技术架构
 
@@ -104,5 +103,5 @@ USDK 是一个支持多链的隐私稳定币平台，专注于提供透明、安
 
 ---
 
-**联系方式**: [待完善](待完善)  
-**项目官网**: [待完善](待完善)
+**联系方式**: [5825267@qq.com](5825267@qq.com)  
+**项目官网**: [https://kusd-frontend-mtdff46kd-zhangx2624-9137s-projects.vercel.app/](https://kusd-frontend-mtdff46kd-zhangx2624-9137s-projects.vercel.app/)
