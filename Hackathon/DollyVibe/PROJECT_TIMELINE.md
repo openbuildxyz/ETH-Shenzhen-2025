@@ -9,6 +9,8 @@ DollyVibe 项目完全是在2025年8月开始开发的原创项目，以下是�
 ### 后端仓库
 ![Backend GitHub Repository](./img/dolly-vibe-backend-github.png)
 
+![Backend Commit History](./img/dolly-vibe-backend-github-commit-history.png)
+
 **关键信息：**
 - 仓库创建时间：**2025年8月**
 - 总提交数：32 commits
@@ -17,6 +19,8 @@ DollyVibe 项目完全是在2025年8月开始开发的原创项目，以下是�
 
 ### 前端仓库  
 ![Frontend GitHub Repository](./img/dolly-vibe-frontend-github.png)
+
+![Frontend Commit History](./img/dolly-vibe-frontend-github-commit-history.png)
 
 **关键信息：**
 - 仓库创建时间：**2025年8月**
