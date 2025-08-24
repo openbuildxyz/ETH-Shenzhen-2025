@@ -6,7 +6,7 @@ Dedate 是一个面向大众的公共物品项目，专注于搜集、整合各�
 
 ## 项目所选赛道
 
-- **Innovative Dapps**: AI+Web3, 社交
+- **Open-Source Tools / Infrastructure**: 基础设施类项目赛道
 
 ## 核心功能
 
