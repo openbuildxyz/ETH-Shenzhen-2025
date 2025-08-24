@@ -44,4 +44,4 @@ Vibe Agent Protocol - A Crypto-Native A2A Trading & Settlement Layer
 
 Deck
 
-还在准备中...
+- ./VAP.pdf
