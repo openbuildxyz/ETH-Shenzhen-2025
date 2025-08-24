@@ -28,6 +28,8 @@
 - **李稀钠** – (https://www.github.com/cNa2017)
 - **陈健标** – (https://www.github.com/BI4O)
 
+- 项目地址：https://github.com/cNa2017/ModuleHub
+
 ------
 
 ## 历史获奖
