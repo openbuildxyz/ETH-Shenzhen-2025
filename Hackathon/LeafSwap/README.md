@@ -1,46 +1,42 @@
-项目概述：
+# ETH-Shenzhen-2025
 
-**xFi**赛道
+## Hackathon 项目提交说明
 
-Leafswap通过在流动性池的不同生命周期进行保护，创新性地缓解初始流动性抢跑攻击和三明治攻击的影响，其内置的MEV Guard是完全在链上运行的独立原生模块可接入到现有的DEX平台
+在 `Hackathon` 文件夹下创建一个以您的项目命名的文件夹。
 
-核心功能：它通过在流动性池的不同生命周期进行保护，有效缓解初始流动性抢跑攻击和三明治攻击的影响。
-**针对初始流动性抢跑攻击**
+项目文件夹内创建一个`README.md` 文件，内含以下内容：
 
-* **保护期设置：**根据不同链的不同的区块时间，设置持续不同区块数量的初始流动性保护期，
+- 项目概述
+- 项目所选赛道(只能选一个)
+  - **Innovative Dapps**: 创新应用类赛道，AI+Web3, 社交, 游戏，消费等你认为可以帮助 Web3 实现 Mass Adoption 的应用可报名此赛道。
+  - **Open-Source Tools / Infrastructure**: 开源工具或基础设施类项目赛道，工具、协议、框架等均可，本赛道由 GCC 特别支持！
+  - **xFi**: 金融类应用/协议赛道，交易协议, DeFi, RWA, ReFi 等等任何可以促进金融创新，实现金融普惠的项目都可以报名此赛道。
 
-**通常持续数百个区块**。
+- 核心功能（4-5 条关键核心要点）
+- 代码仓库地址
+- 团队成员 List（名字、Github 地址）
+- 历史获奖说明：如果您的项目之前参与过其它 Hackathon 或 有获得过奖项/Grant，请再次说明
+- Deck (PPT) 地址，也可直接放在此文件夹下
+- 项目演示（录屏 或 可页面的在线访问地址均可）
 
-* **随机性检查**：引入随机性检查，根据上个区块尝试执行的交易数量动态调节概率，未通过检查的交易会被中断而非 Revert，确保所有交易具有均等执行机会。
+**项目演示和 Deck 可选填写，但二者必须选其一, 其他必填**
 
-* **交易数量限制**：每个区块当前流动性池只能有一笔可执行交易，后续交易将会被中断，以减少女巫攻击的影响。
+## 截止时间
 
-* **交易规模控制**：每笔交易代币最大数量不得超过总流动性池储备总量的 1%，防止代币供应被垄断。
+提交截止时间：**2024 年 8 月 23 日 23:59:59**
 
-* **保护期解除**：初始流动性保护期结束后，上述所有限制自动解除。
+提交后仍可更新代码及相关信息
 
+## Demo 演示时间
 
-**针对三明治攻击**
+**2024 年 8 月 24 日 14:00-18:00**
 
-* **Anti-MEV 开关**：开启后，它会强制当前交易成为当前区块中此交易对的最终可执行交易，并 Revert 当前区块该交易对的后续所有交易，攻击者无法完成后置交易，直接破坏三明治攻击的形成条件，同时也使闪电贷无法用于此类攻击，从而提高攻击者的资金成本。。
+可演示的项目（不符合标准的项目将被剔除，请知悉）及演示顺序会提前半个小时在群里公布
 
-* **交易规模检查**：为避免滥用，协议对 Anti-MEV 交易的规模进行检查，只有代币输出数量超过一定阈值（例如，总流动资金池储备的 0.5%，可调整）的交易才可通过，防止协议被 DDOS 攻击导致不可用。
+## 更多问题
 
-* **MEV 手续费**：对每笔 Anti-MEV 交易收取额外 MEV 手续费，以减少非必要的使用，同时增加 LPs 的做市收益。
+关于本次 Hackathon 的详细评审规则及更多问题可以访问：[ETH Shenzhen 2025 Hackathon Handbook](https://docs.google.com/document/d/1RZ0ElTzTV8TTvnsx93vUU4WNGWSkmrSgvtJnvUddvyE/edit?tab=t.0)
 
+## 如何提交？
 
-代码仓库地址：https://github.com/Beavnvvv/Leaf-Mev
-
-团队成员 List：
-
-Beavn：[Beavnvvv · GitHub](https://github.com/Beavnvvv)
-
-Dawn：[Dawn · GitHub](https://github.com/DawnBlackA)
-
-Young：[Young-coding-co · GitHub](https://github.com/Young-coding-co)
-
-历史获奖说明：无
-
-Deck (PPT) 地址：https://www.kdocs.cn/l/cuUAcU6ynqN3
-
-Demo：https://youtu.be/g02t9zM6078?si=DFrJZniF67zhOOqJ  https://youtu.be/EII3N7i0dPc?si=SgXlIhXNIdV0MYoR
+参照 GitHub PR 标准：[How to make your first pull request on GitHub](https://www.freecodecamp.org/news/how-to-make-your-first-pull-request-on-github-3/)
