@@ -1,0 +1,6 @@
+[submodule "Hackathon/Thyra/code"]
+	path = Hackathon/Thyra/code
+	url = https://github.com/Oblivionis214/Thyra-monorepo.git
+[submodule "Hackathon/Thyra/Thyra-monorepo"]
+	path = Hackathon/Thyra/Thyra-monorepo
+	url = https://github.com/Oblivionis214/Thyra-monorepo.git
