@@ -25,7 +25,7 @@ Open-Source Tools / Infrastructure
 
 ## 团队成员 List（名字、Github 地址）
 
-- Gloom
+- Gloom - https://github.com/shawsnk
 
 - Lily - https://github.com/zmxzoe
 
