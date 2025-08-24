@@ -18,11 +18,11 @@
   - 全流程的最小 demo （从手机到中间件到链上）
 - 代码仓库地址
   - 中间件 证书解析器 https://github.com/TrustPipe/AppleATSCertParser
-  - IOS 端 demo TBD
-  - 合约 TBD
+  - IOS 端 https://github.com/TrustPipe/AppleATSMinClient
+  - 合约 写不完了
 - 团队成员（Harold、https://github.com/HaroldGin931）
 - 历史获奖说明：在后续的其他生态黑客松中有获奖 (300U)，使用了在 eth 黄山的 App attest 的 IOS 部分代码，但获奖原因为前端使用 iphone 读取护照 NFC 芯片 以及使用本地人脸对比功能确认读取护照的人确实是该护照的持有人 但本次黑客松的方向聚焦于后端/中间件 是属于证书解析的部分
-- Deck (PPT) 写完代码上传
+- Deck (PPT) https://docs.google.com/presentation/d/1tZ_Zr1MZMYyumS0ZuVkwT1dtG5YSxX7LvwzDcCOAZl0/edit?usp=sharing
 - 项目演示（录屏 或 可页面的在线访问地址均可）
 
 **项目演示和 Deck 可选填写，但二者必须选其一, 其他必填**
